@@ -44,6 +44,7 @@ Este projeto tem como finalidade demonstrar:
 - TypeScript
 - Vite
 - SWC
+- React Router Dom v7
 
 ## Estilização & UI
 
