@@ -1,0 +1,16 @@
+{
+  "name": "Portfolio Website V8",
+  "short_name": "Portfolio V8",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
