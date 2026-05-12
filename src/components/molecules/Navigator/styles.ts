@@ -1,3 +1,3 @@
 import styled from 'styled-components';
 
-export const Avatar = styled.div``;
+export const Navigator = styled.nav``;
