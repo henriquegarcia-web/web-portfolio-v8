@@ -1,5 +1,47 @@
 {
-  "home": {
-    "testMessage": "Texto de teste da rota principal."
+  "sections": {
+    "inicio": {
+      "nav": "Início",
+      "label": "",
+      "headline": "",
+      "legend": "",
+      "ctaProjects": "",
+      "ctaContact": ""
+    },
+    "sobre": {
+      "nav": "Sobre",
+      "label": "",
+      "headline": "",
+      "about": "",
+      "experience": "",
+      "projects": "",
+      "results": ""
+    },
+    "servicos": {
+      "nav": "Serviços",
+      "label": "Serviços",
+      "headline": ""
+    },
+    "projetos": {
+      "nav": "Projetos",
+      "label": "Projetos",
+      "headline": ""
+    },
+    "feedback": {
+      "nav": "Feedback",
+      "label": "Feedback",
+      "headline": ""
+    },
+    "processos": {
+      "nav": "Processos",
+      "label": "Processos",
+      "headline": ""
+    },
+    "cta": {
+      "nav": "Contato",
+      "headline": "",
+      "legend": "",
+      "ctaContact": ""
+    }
   }
 }

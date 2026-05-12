@@ -1,5 +1,40 @@
 {
-  "home": {
-    "testMessage": "Main route test text."
+  "sections": {
+    "inicio": {
+      "label": "",
+      "headline": "",
+      "legend": "",
+      "ctaProjects": "",
+      "ctaContact": ""
+    },
+    "sobre": {
+      "label": "",
+      "headline": "",
+      "about": "",
+      "experience": "",
+      "projects": "",
+      "results": ""
+    },
+    "servicos": {
+      "label": "Services",
+      "headline": ""
+    },
+    "projetos": {
+      "label": "Projects",
+      "headline": ""
+    },
+    "feedback": {
+      "label": "Feedbacks",
+      "headline": ""
+    },
+    "processos": {
+      "label": "Process",
+      "headline": ""
+    },
+    "cta": {
+      "headline": "",
+      "legend": "",
+      "ctaContact": ""
+    }
   }
 }

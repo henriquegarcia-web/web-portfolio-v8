@@ -1,9 +1,23 @@
-import * as S from './styles';
+// ================== IMPORTS
 
-// interface INavLink {}
+import * as S from './styles'
 
-const NavLink = () => {
-  return <S.NavLink href="/">NavLink</S.NavLink>;
-};
+// ================== COMPONENT TYPES
 
-export default NavLink;
+interface INavLink {
+  label: string
+  path: string
+  active: boolean
+}
+
+// ================== COMPONENT
+
+const NavLink = ({ label, path, active }: INavLink) => {
+  return (
+    <S.NavLink href={path} $active={active}>
+      {label}
+    </S.NavLink>
+  )
+}
+
+export default NavLink

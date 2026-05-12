@@ -1,3 +1,13 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-export const NavLink = styled.a``;
+interface INavLink {
+  $active: boolean
+}
+
+export const NavLink = styled.a<INavLink>`
+  border-bottom: 2px solid
+    ${({ theme, $active }) =>
+      $active
+        ? theme.colors.brand.accent
+        : theme.colors.neutral.darkest};
+`

@@ -1,9 +1,23 @@
-import * as S from './styles';
+// ================== IMPORTS
 
-// interface ISectionHeader {}
+import * as S from './styles'
 
-const SectionHeader = () => {
-  return <S.SectionHeader>SectionHeader</S.SectionHeader>;
-};
+// ================== COMPONENT TYPES
 
-export default SectionHeader;
+interface ISectionHeader {
+  label: string
+  headline: string
+}
+
+// ================== COMPONENT
+
+const SectionHeader = ({ label, headline }: ISectionHeader) => {
+  return (
+    <S.SectionHeader>
+      <S.SectionHeaderTitle>{label}</S.SectionHeaderTitle>
+      <S.SectionHeaderHeadline>{headline}</S.SectionHeaderHeadline>
+    </S.SectionHeader>
+  )
+}
+
+export default SectionHeader

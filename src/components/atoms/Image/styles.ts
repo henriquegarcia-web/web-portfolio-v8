@@ -1,3 +1,3 @@
 import styled from 'styled-components';
 
-export const Image = styled.figure``;
+export const Image = styled.img``;

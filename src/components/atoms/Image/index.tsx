@@ -1,9 +1,20 @@
-import * as S from './styles';
+// ================== IMPORTS
 
-// interface IImage {}
+import * as S from './styles'
 
-const Image = () => {
-  return <S.Image>Image</S.Image>;
-};
+// ================== COMPONENT TYPES
 
-export default Image;
+interface IImage {
+  src: string
+  alt: string
+  width: number
+  height: number
+}
+
+// ================== COMPONENT
+
+const Image = ({ src, alt, width, height }: IImage) => {
+  return <S.Image src={src} alt={alt} width={width} height={height} />
+}
+
+export default Image
