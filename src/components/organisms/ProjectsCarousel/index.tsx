@@ -1,9 +1,20 @@
-import * as S from './styles';
+// ================== IMPORTS
 
-// interface IProjectsCarousel {}
+import * as S from './styles'
+
+import { ProjectCard } from '@/components/molecules'
+import { projects } from '@/constants/projects'
+
+// ================== COMPONENT
 
 const ProjectsCarousel = () => {
-  return <S.ProjectsCarousel>ProjectsCarousel</S.ProjectsCarousel>;
-};
+  return (
+    <S.ProjectsCarousel>
+      {projects.map((project) => (
+        <ProjectCard key={project.id} project={project} />
+      ))}
+    </S.ProjectsCarousel>
+  )
+}
 
-export default ProjectsCarousel;
+export default ProjectsCarousel

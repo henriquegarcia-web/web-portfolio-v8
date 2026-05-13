@@ -1,9 +1,29 @@
-import * as S from './styles';
+// ================== IMPORTS
 
-// interface ITechStackRow {}
+import * as S from './styles'
+import StackIcon from 'tech-stack-icons'
+
+import { techStack } from '@/constants/stack'
+import { useAppTranslation } from '@/hooks/useAppTranslation'
+import { Typography } from '@/components/atoms'
+
+// ================== COMPONENT
 
 const TechStackRow = () => {
-  return <S.TechStackRow>TechStackRow</S.TechStackRow>;
-};
+  const { t } = useAppTranslation()
 
-export default TechStackRow;
+  return (
+    <S.TechStackRow>
+      <Typography variant="text" as="p">
+        {t('components.techStack.title')}
+      </Typography>
+      <S.TechStackWrapper>
+        {techStack.map((stack) => (
+          <StackIcon key={`stack-${stack.id}`} name={stack.id} />
+        ))}
+      </S.TechStackWrapper>
+    </S.TechStackRow>
+  )
+}
+
+export default TechStackRow

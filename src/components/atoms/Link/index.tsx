@@ -1,9 +1,26 @@
-import * as S from './styles';
+// ================== IMPORTS
 
-// interface ILink {}
+import { Link as RRDLink } from 'react-router-dom'
 
-const Link = () => {
-  return <S.Link href="/">Link</S.Link>;
-};
+import { Typography } from '@/components/atoms'
 
-export default Link;
+// ================== COMPONENT TYPES
+
+interface ILink {
+  to: string
+  children: string
+}
+
+// ================== COMPONENT
+
+const Link = ({ to, children }: ILink) => {
+  return (
+    <RRDLink to={to}>
+      <Typography variant="text" as="p">
+        {children}
+      </Typography>
+    </RRDLink>
+  )
+}
+
+export default Link

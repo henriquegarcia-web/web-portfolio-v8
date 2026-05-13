@@ -7,6 +7,9 @@ export const colors = {
     contrast: '#f8fafc',
     fade: 'linear-gradient(135deg, #3b82f6 0%, #5b5df0 52%, #8b5cf6 100%)',
   },
+  tag: {
+    accent: '#8a5cf6a1',
+  },
   neutral: {
     white: '#ffffff',
     soft: '#f8fafc',
@@ -58,4 +61,4 @@ export const colors = {
     strong: 'rgba(2, 6, 23, 0.72)',
   },
   focus: '#93c5fd',
-} as const;
+} as const

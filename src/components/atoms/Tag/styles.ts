@@ -1,3 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
+import type { TagVariantTypes } from '@/types/styles'
 
-export const Tag = styled.span``;
+export interface ITag {
+  $variant: TagVariantTypes
+}
+
+export const Tag = styled.span<ITag>``

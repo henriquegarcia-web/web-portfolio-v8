@@ -1,32 +1,40 @@
-// ================== IMPORTS
-
 import { memo } from 'react'
 
 import * as S from './styles'
 
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import type { LinkProps } from 'react-router-dom'
 import type {
   ButtonVariantTypes,
   PostionTypes,
   SizeTypes,
 } from '@/types/styles'
 
-// ================== COMPONENT TYPES
-
-interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonBaseProps = {
   variant?: ButtonVariantTypes
   size?: SizeTypes
-  value?: string
+  children?: ReactNode
   icon?: ReactNode
   iconPosition?: PostionTypes
 }
 
-// ================== COMPONENT
+type ButtonAsButtonProps = ButtonBaseProps &
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'> & {
+    type?: 'button' | 'submit'
+  }
+
+type ButtonAsLinkProps = ButtonBaseProps &
+  Omit<LinkProps, 'to'> & {
+    type: 'link'
+    path: string
+  }
+
+type IButton = ButtonAsButtonProps | ButtonAsLinkProps
 
 const Button = ({
   variant = 'primary',
   size = 'md',
-  value,
+  children,
   icon,
   iconPosition = 'left',
   type = 'button',
@@ -34,25 +42,45 @@ const Button = ({
 }: IButton) => {
   const hasOnlyIcon = Boolean(icon && iconPosition === 'only')
 
-  return (
-    <S.Button
-      $variant={variant}
-      $size={size}
-      $iconOnly={hasOnlyIcon}
-      type={type}
-      {...props}
-    >
-      {icon && iconPosition === 'left' && (
-        <S.IconWrapper>{icon}</S.IconWrapper>
-      )}
+  const content = (
+    <>
+      {icon && iconPosition === 'left' && <S.IconWrapper>{icon}</S.IconWrapper>}
 
-      {!hasOnlyIcon && value && <S.Label>{value}</S.Label>}
+      {!hasOnlyIcon && children && <S.Label>{children}</S.Label>}
 
       {icon && iconPosition === 'right' && (
         <S.IconWrapper>{icon}</S.IconWrapper>
       )}
 
       {icon && hasOnlyIcon && <S.IconWrapper>{icon}</S.IconWrapper>}
+    </>
+  )
+
+  if (type === 'link') {
+    const { path, ...linkProps } = props as ButtonAsLinkProps
+
+    return (
+      <S.ButtonLink
+        to={path}
+        $variant={variant}
+        $size={size}
+        $iconOnly={hasOnlyIcon}
+        {...linkProps}
+      >
+        {content}
+      </S.ButtonLink>
+    )
+  }
+
+  return (
+    <S.Button
+      type={type}
+      $variant={variant}
+      $size={size}
+      $iconOnly={hasOnlyIcon}
+      {...(props as ButtonAsButtonProps)}
+    >
+      {content}
     </S.Button>
   )
 }

@@ -1,9 +1,25 @@
-import * as S from './styles';
+// ================== IMPORTS
 
-// interface IServicesSection {}
+import * as S from './styles'
+
+import { SectionHeader } from '@/components/molecules'
+import { ServicesCarousel } from '@/components/organisms'
+import { useAppTranslation } from '@/hooks/useAppTranslation'
+
+// ================== COMPONENT
 
 const ServicesSection = () => {
-  return <S.ServicesSection>ServicesSection</S.ServicesSection>;
-};
+  const { t } = useAppTranslation()
 
-export default ServicesSection;
+  return (
+    <S.ServicesSection>
+      <SectionHeader
+        label={t('sections.servicos.label')}
+        headline={t('sections.servicos.headline')}
+      />
+      <ServicesCarousel />
+    </S.ServicesSection>
+  )
+}
+
+export default ServicesSection

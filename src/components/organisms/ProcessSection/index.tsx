@@ -1,9 +1,25 @@
-import * as S from './styles';
+// ================== IMPORTS
 
-// interface IProcessSection {}
+import * as S from './styles'
+
+import { SectionHeader } from '@/components/molecules'
+import { ProcessTimeline } from '@/components/organisms'
+import { useAppTranslation } from '@/hooks/useAppTranslation'
+
+// ================== COMPONENT
 
 const ProcessSection = () => {
-  return <S.ProcessSection>ProcessSection</S.ProcessSection>;
-};
+  const { t } = useAppTranslation()
 
-export default ProcessSection;
+  return (
+    <S.ProcessSection>
+      <SectionHeader
+        label={t('sections.processos.label')}
+        headline={t('sections.processos.headline')}
+      />
+      <ProcessTimeline />
+    </S.ProcessSection>
+  )
+}
+
+export default ProcessSection

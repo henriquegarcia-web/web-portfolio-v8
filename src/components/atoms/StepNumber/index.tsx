@@ -1,9 +1,24 @@
-import * as S from './styles';
+// ================== IMPORTS
 
-// interface IStepNumber {}
+import { Typography } from '@/components/atoms'
 
-const StepNumber = () => {
-  return <S.StepNumber>StepNumber</S.StepNumber>;
-};
+// ================== COMPONENT TYPES
 
-export default StepNumber;
+interface IStepNumber {
+  step: number
+  decimal?: number
+}
+
+// ================== COMPONENT
+
+const StepNumber = ({ step, decimal = 2 }: IStepNumber) => {
+  const formattedNumber = String(step).padStart(decimal, '0')
+
+  return (
+    <Typography variant="text" as="p">
+      {formattedNumber}
+    </Typography>
+  )
+}
+
+export default StepNumber

@@ -1,9 +1,20 @@
-import * as S from './styles';
+// ================== IMPORTS
 
-// interface IProcessTimeline {}
+import * as S from './styles'
+
+import { ProcessStepCard } from '@/components/molecules'
+import { processes } from '@/constants/process'
+
+// ================== COMPONENT
 
 const ProcessTimeline = () => {
-  return <S.ProcessTimeline>ProcessTimeline</S.ProcessTimeline>;
-};
+  return (
+    <S.ProcessTimeline>
+      {processes.map((process, index) => (
+        <ProcessStepCard key={process.id} position={index} process={process} />
+      ))}
+    </S.ProcessTimeline>
+  )
+}
 
-export default ProcessTimeline;
+export default ProcessTimeline

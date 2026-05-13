@@ -1,9 +1,11 @@
-import * as S from './styles';
+// ================== IMPORTS
 
-// interface IMobileMenu {}
+import * as S from './styles'
+
+// ================== COMPONENT
 
 const MobileMenu = () => {
-  return <S.MobileMenu aria-label="Mobile menu">MobileMenu</S.MobileMenu>;
-};
+  return <S.MobileMenu aria-label="Mobile menu">MobileMenu</S.MobileMenu>
+}
 
-export default MobileMenu;
+export default MobileMenu

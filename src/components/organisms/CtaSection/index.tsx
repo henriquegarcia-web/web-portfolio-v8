@@ -1,9 +1,29 @@
-import * as S from './styles';
+// ================== IMPORTS
 
-// interface ICtaSection {}
+import * as S from './styles'
+import { FaLocationArrow } from 'react-icons/fa'
+
+import { Button, Typography } from '@/components/atoms'
+import { useAppTranslation } from '@/hooks/useAppTranslation'
+
+// ================== COMPONENT
 
 const CtaSection = () => {
-  return <S.CtaSection>CtaSection</S.CtaSection>;
-};
+  const { t } = useAppTranslation()
 
-export default CtaSection;
+  return (
+    <S.CtaSection>
+      <Typography variant="text" as="p">
+        {t('sections.cta.headline')}
+      </Typography>
+      <Typography variant="text" as="p">
+        {t('sections.cta.legend')}
+      </Typography>
+      <Button icon={<FaLocationArrow />} iconPosition="right" variant="primary">
+        {t('sections.cta.ctaContact')}
+      </Button>
+    </S.CtaSection>
+  )
+}
+
+export default CtaSection

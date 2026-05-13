@@ -1,9 +1,20 @@
-import * as S from './styles';
+// ================== IMPORTS
 
-// interface ITag {}
+import * as S from './styles'
 
-const Tag = () => {
-  return <S.Tag>Tag</S.Tag>;
-};
+import type { TagVariantTypes } from '@/types/styles'
 
-export default Tag;
+// ================== COMPONENT TYPES
+
+interface ITag {
+  variant?: TagVariantTypes
+  children: React.ReactNode
+}
+
+// ================== COMPONENT
+
+const Tag = ({ variant = 'default', children }: ITag) => {
+  return <S.Tag $variant={variant}>{children}</S.Tag>
+}
+
+export default Tag

@@ -1,9 +1,39 @@
-import * as S from './styles';
+// ================== IMPORTS
 
-// interface ITypography {}
+import * as S from './styles'
 
-const Typography = () => {
-  return <S.Typography>Typography</S.Typography>;
-};
+export type TypographyVariant =
+  | 'hero-title'
+  | 'title'
+  | 'subtitle'
+  | 'label'
+  | 'text'
+  | 'caption'
+  | 'button'
+  | 'link'
 
-export default Typography;
+// ================== COMPONENT TYPES
+
+export interface ITypography {
+  children: React.ReactNode
+  variant?: TypographyVariant
+  as?: React.ElementType
+  className?: string
+}
+
+// ================== COMPONENT
+
+const Typography = ({
+  children,
+  variant = 'text',
+  as,
+  className,
+}: ITypography) => {
+  return (
+    <S.Typography as={as} $variant={variant} className={className}>
+      {children}
+    </S.Typography>
+  )
+}
+
+export default Typography

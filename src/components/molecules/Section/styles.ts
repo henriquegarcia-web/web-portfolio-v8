@@ -1,8 +1,6 @@
 import styled from 'styled-components'
-import type { LandingVariantTypes } from '@/types/styles'
 
 interface ILandingTemplate {
-  $variant: LandingVariantTypes
   $background: string
 }
 
@@ -17,5 +15,3 @@ export const SectionWrapper = styled.div`
   width: 100%;
   max-width: ${({ theme }) => theme.sizes.container.lg};
 `
-
-export const SectionContent = styled.div``

@@ -1,6 +1,6 @@
-// Button/styles.ts
-
 import styled, { css } from 'styled-components'
+import { Link } from 'react-router-dom'
+
 import type { ButtonVariantTypes, SizeTypes } from '@/types/styles'
 
 interface IButtonStyleProps {
@@ -42,15 +42,15 @@ const buttonSizes = {
   `,
 }
 
-export const Button = styled.button<IButtonStyleProps>`
+const buttonStyles = css<IButtonStyleProps>`
   border: 0;
+  text-decoration: none;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
   gap: 8px;
-
   cursor: pointer;
 
   transition:
@@ -64,7 +64,7 @@ export const Button = styled.button<IButtonStyleProps>`
     $iconOnly &&
     css`
       padding: 0;
-      aspect-ratio: 1/1;
+      aspect-ratio: 1 / 1;
     `}
 
   &:hover {
@@ -79,6 +79,14 @@ export const Button = styled.button<IButtonStyleProps>`
     opacity: 0.5;
     cursor: not-allowed;
   }
+`
+
+export const ButtonLink = styled(Link)<IButtonStyleProps>`
+  ${buttonStyles}
+`
+
+export const Button = styled.button<IButtonStyleProps>`
+  ${buttonStyles}
 `
 
 export const Label = styled.span`

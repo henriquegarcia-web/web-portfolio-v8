@@ -16,7 +16,7 @@ const LandingTemplate = ({ children }: ILandingTemplate) => {
   return (
     <S.LandingTemplate>
       <Header />
-      <S.LandingTemplate>{children}</S.LandingTemplate>
+      <S.LandingContent>{children}</S.LandingContent>
       <Footer />
     </S.LandingTemplate>
   )

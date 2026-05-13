@@ -8,4 +8,5 @@ export const LandingTemplate = styled.div`
 export const LandingContent = styled.div`
   display: flex;
   flex-direction: column;
+  padding-top: ${({ theme }) => theme.sizes.header.desktop};
 `

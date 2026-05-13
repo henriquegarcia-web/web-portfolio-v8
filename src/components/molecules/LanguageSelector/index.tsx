@@ -1,3 +1,5 @@
+// ================== IMPORTS
+
 import { useState } from 'react'
 
 import * as S from './styles'
@@ -5,6 +7,8 @@ import { FaChevronDown } from 'react-icons/fa'
 
 import { AnimatePresence } from 'framer-motion'
 import { languages } from '@/constants/languages'
+
+// ================== COMPONENT
 
 const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,7 +24,7 @@ const LanguageSelector = () => {
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
         >
-          <FaChevronDown  />
+          <FaChevronDown />
         </S.Arrow>
       </S.Trigger>
 

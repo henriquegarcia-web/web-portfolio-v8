@@ -2,46 +2,149 @@
   "sections": {
     "inicio": {
       "nav": "Início",
-      "label": "",
-      "headline": "",
-      "legend": "",
-      "ctaProjects": "",
-      "ctaContact": ""
+      "label": "Desenvolvedor - Solucionador - Inovador",
+      "headline": "Transformo ideias em soluções digitais que geram impacto real.",
+      "headlineFocus": "impacto real",
+      "legend": "Programador apaixonado por criar experiências, automatizar processos e desenvolver sistemas que impulsionam negócios.",
+      "ctaProjects": "Ver projetos",
+      "ctaContact": "Vamos conversar"
     },
     "sobre": {
       "nav": "Sobre",
-      "label": "",
-      "headline": "",
-      "about": "",
-      "experience": "",
-      "projects": "",
-      "results": ""
+      "label": "Sobre Mim",
+      "headline": "Mais que código. Eu crio soluções.",
+      "headlineFocus": "soluções",
+      "about": "Acredito que tecnologia de verdade não é só sobre código limpo, mas sobre entender problemas profundos e entregar soluções simples, escaláveis e que realmente fazem a diferença."
     },
     "servicos": {
       "nav": "Serviços",
-      "label": "Serviços",
-      "headline": ""
+      "label": "O que eu faço",
+      "headline": "Soluções que desenvolvo"
     },
     "projetos": {
       "nav": "Projetos",
-      "label": "Projetos",
-      "headline": ""
+      "label": "Projetos em destaque",
+      "headline": "Alguns resultados que entreguei"
     },
     "feedback": {
-      "nav": "Feedback",
-      "label": "Feedback",
-      "headline": ""
+      "nav": "Feedbacks",
+      "label": "Feedbacks",
+      "headline": "O que dizem sobre o meu trabalho"
     },
     "processos": {
       "nav": "Processos",
-      "label": "Processos",
-      "headline": ""
+      "label": "Meu processo",
+      "headline": "Como eu trabalho"
     },
     "cta": {
       "nav": "Contato",
-      "headline": "",
-      "legend": "",
-      "ctaContact": ""
+      "headline": "Vamos construir algo incrível juntos?",
+      "legend": "Tem um desafio, ideia ou um projeto? Estou pronto para transformar em solução.",
+      "ctaContact": "Vamos conversar"
+    },
+    "footer": {
+      "headline": "Desenvolvo soluções digitais que automatizão e impulsionam negócios.",
+      "availability": "Disponível para proposta, freelance e parcerias.",
+      "rights": "2026 - Todos os direitos reservados",
+      "madeBy": "Feito com paixão por código."
+    }
+  },
+  "components": {
+    "techStack": {
+      "title": "Tecnologias",
+      "react": "React.js",
+      "nextjs2": "Next.js",
+      "typescript": "TypeScript",
+      "nodejs": "Node.js",
+      "docker": "Dcoker"
+    },
+    "indicators": {
+      "experience": "Anos de Experiência",
+      "projects": "Projetos Entregues",
+      "results": "Foco em Resultados"
+    },
+    "services": {
+      "web-mobile": {
+        "title": "Desenvolvimento Web & Mobile",
+        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+      },
+      "custom-systems": {
+        "title": "Sistemas Personalizados",
+        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+      },
+      "automations": {
+        "title": "Automação & Integrações",
+        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+      },
+      "api": {
+        "title": "API & Backends",
+        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+      },
+      "consultancy": {
+        "title": "Consultoria Tecnológica",
+        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+      }
+    },
+    "projects": {
+      "uniw": {
+        "title": "E-commerce Multiplataforma",
+        "description": "Plataforma de e-commerce multi-tenant que conecta vendedores, clientes e fornecedores, com controle total para o administrador.",
+        "tag": "Sistema"
+      },
+      "mandato-digital": {
+        "title": "Sistema de Gestão Política",
+        "description": "Plataforma para gestão política que otimiza o controle de eleitores, comunicação e atividades de campanha.",
+        "tag": "Sistema"
+      },
+      "hungry-hub": {
+        "title": "Sistema de Cardápio Online",
+        "description": "Plataforma online para gerenciamento de cardápios de restaurantes, permitindo atualização em tempo real e pedidos online.",
+        "tag": "Delivery"
+      },
+      "quick-shop": {
+        "title": "E-commerce de Camisetas",
+        "description": "E-commerce moderno e dinâmico focado na venda de camisetas, com design clean e processo de compra otimizado.",
+        "tag": "E-Commerce"
+      }
+    },
+    "feedbacks": {
+      "feedback1": {
+        "name": "Juliana Carvalho",
+        "role": "CEO",
+        "message": ""
+      },
+      "feedback2": {
+        "name": "Rafael Mendes",
+        "role": "Empreendedor",
+        "message": ""
+      },
+      "feedback3": {
+        "name": "Camila Vieira",
+        "role": "Empreendedora",
+        "message": ""
+      }
+    },
+    "processes": {
+      "step1": {
+        "title": "Entender",
+        "description": "Escuto, pergunto e mergulho no problema para entender o que realmente importa."
+      },
+      "step2": {
+        "title": "Planejar",
+        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
+      },
+      "step3": {
+        "title": "Desenvolver",
+        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
+      },
+      "step4": {
+        "title": "Entregar",
+        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
+      },
+      "step5": {
+        "title": "Evoluir",
+        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
+      }
     }
   }
 }
