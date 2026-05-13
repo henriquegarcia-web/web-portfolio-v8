@@ -1,6 +1,6 @@
 // ================== IMPORTS
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 import * as S from './styles'
 
@@ -22,6 +22,13 @@ const getCurrentHash = () =>
 const Navigator = () => {
   const [currentHash, setCurrentHash] = useState(getCurrentHash)
 
+  const [indicatorStyle, setIndicatorStyle] = useState({
+    width: 0,
+    left: 0,
+  })
+
+  const navRef = useRef<HTMLElement | null>(null)
+
   const { t } = useAppTranslation()
 
   useEffect(() => {
@@ -38,20 +45,35 @@ const Navigator = () => {
 
   const navItems = useMemo(
     () =>
-      navigationSections.map((section) => {
-        const sectionPath = `#${section.id}`
+      navigationSections
+        .filter((section) => section.id !== 'cta')
+        .map((section) => {
+          const sectionPath = `#${section.id}`
 
-        return {
-          ...section,
-          path: sectionPath,
-          active: currentHash === sectionPath,
-        }
-      }),
+          return {
+            ...section,
+            path: sectionPath,
+            active: currentHash === sectionPath,
+          }
+        }),
     [currentHash],
   )
 
+  useEffect(() => {
+    const activeElement = navRef.current?.querySelector(
+      '[data-active="true"]',
+    ) as HTMLElement | null
+
+    if (!activeElement) return
+
+    setIndicatorStyle({
+      width: activeElement.offsetWidth,
+      left: activeElement.offsetLeft,
+    })
+  }, [currentHash])
+
   return (
-    <S.Navigator aria-label="Navegação principal">
+    <S.Navigator ref={navRef} aria-label="Navegação principal">
       {navItems.map((section) => (
         <NavLink
           key={section.id}
@@ -60,6 +82,13 @@ const Navigator = () => {
           active={section.active}
         />
       ))}
+
+      <S.ActiveIndicator
+        style={{
+          width: `${indicatorStyle.width}px`,
+          transform: `translateX(${indicatorStyle.left}px)`,
+        }}
+      />
     </S.Navigator>
   )
 }

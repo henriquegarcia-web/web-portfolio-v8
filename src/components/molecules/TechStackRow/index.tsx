@@ -14,7 +14,7 @@ const TechStackRow = () => {
 
   return (
     <S.TechStackRow>
-      <Typography variant="text" as="p">
+      <Typography variant="text" as="p" uppercase>
         {t('components.techStack.title')}
       </Typography>
       <S.TechStackWrapper>

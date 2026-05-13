@@ -2,7 +2,7 @@
 
 import * as S from './styles'
 
-import { HeroDescription, TechStackRow } from '@/components/molecules'
+import { HeroDescription } from '@/components/molecules'
 
 // ================== COMPONENT
 
@@ -11,7 +11,7 @@ const HeroSection = () => {
     <S.HeroSection>
       <S.HeroSectionLeft>
         <HeroDescription />
-        <TechStackRow />
+        {/* <TechStackRow /> */}
       </S.HeroSectionLeft>
     </S.HeroSection>
   )

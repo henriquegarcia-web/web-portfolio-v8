@@ -23,6 +23,6 @@ export const sizes = {
 
   header: {
     mobile: '4.5rem', // 72px
-    desktop: '5.5rem', // 88px
+    desktop: '5rem', // 88px
   },
 } as const

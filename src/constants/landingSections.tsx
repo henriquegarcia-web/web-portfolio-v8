@@ -13,7 +13,10 @@ import type { ComponentType } from 'react'
 export interface ILandingSection {
   id: string
   Component: ComponentType
-  background: string
+  background: {
+    type: 'color' | 'image' | 'video'
+    value: string
+  }
   showInNavigation: boolean
 }
 
@@ -21,43 +24,64 @@ export const landingSections: ILandingSection[] = [
   {
     id: 'inicio',
     Component: HeroSection,
-    background: 'transparent',
+    background: {
+      type: 'video',
+      value: '/hero_bg.mp4',
+    },
     showInNavigation: true,
   },
   {
     id: 'sobre',
     Component: AboutSection,
-    background: 'transparent',
+    background: {
+      type: 'color',
+      value: 'transparent',
+    },
     showInNavigation: true,
   },
   {
     id: 'servicos',
     Component: ServicesSection,
-    background: 'transparent',
+    background: {
+      type: 'color',
+      value: 'transparent',
+    },
     showInNavigation: true,
   },
   {
     id: 'projetos',
     Component: ProjectsSection,
-    background: 'transparent',
+    background: {
+      type: 'color',
+      value: 'transparent',
+    },
     showInNavigation: true,
   },
   {
     id: 'feedback',
     Component: TestimonialsSection,
-    background: 'transparent',
+    background: {
+      type: 'color',
+      value: 'transparent',
+    },
     showInNavigation: true,
   },
   {
     id: 'processos',
     Component: ProcessSection,
-    background: 'transparent',
+    background: {
+      type: 'color',
+      value: 'transparent',
+    },
     showInNavigation: true,
   },
   {
     id: 'cta',
     Component: CtaSection,
-    background: 'transparent',
+    background: {
+      type: 'color',
+      value: 'transparent',
+    },
     showInNavigation: true,
   },
 ]

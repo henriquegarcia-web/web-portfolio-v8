@@ -2,7 +2,7 @@
   "sections": {
     "inicio": {
       "nav": "Início",
-      "label": "Desenvolvedor - Solucionador - Inovador",
+      "label": "Desenvolvedor • Solucionador • Inovador",
       "headline": "Transformo ideias em soluções digitais que geram impacto real.",
       "headlineFocus": "impacto real",
       "legend": "Programador apaixonado por criar experiências, automatizar processos e desenvolver sistemas que impulsionam negócios.",
@@ -51,7 +51,7 @@
   },
   "components": {
     "techStack": {
-      "title": "Tecnologias",
+      "title": "Minha stack",
       "react": "React.js",
       "nextjs2": "Next.js",
       "typescript": "TypeScript",

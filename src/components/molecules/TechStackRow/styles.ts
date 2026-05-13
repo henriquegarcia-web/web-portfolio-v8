@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const TechStackRow = styled.div`
   display: flex;
   flex-direction: column;
+  gap: ${({ theme }) => theme.spacing[2]};
 `
 
 export const TechStackWrapper = styled.div`

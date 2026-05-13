@@ -11,16 +11,16 @@ export const typography = {
     bold: 700,
   },
   fontSizes: {
-    xs: '0.75rem',
-    sm: '0.875rem',
-    base: '1rem',
-    lg: '1.125rem',
-    xl: '1.25rem',
-    '2xl': '1.5rem',
-    '3xl': '2rem',
-    '4xl': '2.5rem',
-    '5xl': '3rem',
-    '6xl': '3.75rem',
+    xs: '0.75rem', // 12px
+    sm: '0.875rem', // 14px
+    base: '1rem', // 16px
+    lg: '1.125rem', // 18px
+    xl: '1.25rem', // 20px
+    '2xl': '1.5rem', // 24px
+    '3xl': '2rem', // 32px
+    '4xl': '2.5rem', // 40px
+    '5xl': '3rem', // 48px
+    '6xl': '3.75rem', // 60px
   },
   lineHeights: {
     tight: 1.1,
@@ -34,4 +34,4 @@ export const typography = {
     normal: '0',
     wide: '0.02em',
   },
-} as const;
+} as const

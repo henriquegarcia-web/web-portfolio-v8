@@ -1,7 +1,7 @@
 // ================== IMPORTS
 
 import * as S from './styles'
-import { FaLocationArrow } from 'react-icons/fa'
+import { RiArrowRightUpLine } from 'react-icons/ri'
 
 import { Button, Typography } from '@/components/atoms'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
@@ -16,22 +16,28 @@ const HeroDescription = () => {
       <Typography variant="label" as="h2">
         {t('sections.inicio.label')}
       </Typography>
-      <Typography variant="hero-title" as="h1">
+      <Typography
+        variant="hero-title"
+        as="h1"
+        highlight={t('sections.inicio.headlineFocus')}
+      >
         {t('sections.inicio.headline')}
       </Typography>
-      <Typography variant="text" as="p">
-        {t('sections.inicio.legend')}
-      </Typography>
+      <S.HeroLegend>
+        <Typography variant="text" as="p">
+          {t('sections.inicio.legend')}
+        </Typography>
+      </S.HeroLegend>
       <S.HeroCtas>
         <Button
-          icon={<FaLocationArrow />}
+          icon={<RiArrowRightUpLine />}
           iconPosition="right"
           variant="primary"
         >
           {t('sections.inicio.ctaProjects')}
         </Button>
         <Button
-          icon={<FaLocationArrow />}
+          icon={<RiArrowRightUpLine />}
           iconPosition="right"
           variant="secondary"
         >

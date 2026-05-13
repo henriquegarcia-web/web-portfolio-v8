@@ -4,6 +4,8 @@ import type { TypographyVariant } from '.'
 
 interface ITypographyStyleProps {
   $variant: TypographyVariant
+  $active?: boolean
+  $uppercase?: boolean
 }
 
 const variants = {
@@ -33,15 +35,25 @@ const variants = {
 
   label: css`
     font-family: ${({ theme }) => theme.typography.families.heading};
-    font-size: ${({ theme }) => theme.typography.fontSizes['xl']};
-    font-weight: ${({ theme }) => theme.typography.fontWeights.semibold};
+    font-size: ${({ theme }) => theme.typography.fontSizes.base};
+    font-weight: ${({ theme }) => theme.typography.fontWeights.bold};
     line-height: ${({ theme }) => theme.typography.lineHeights.normal};
-    letter-spacing: ${({ theme }) => theme.typography.letterSpacings.normal};
+    letter-spacing: ${({ theme }) => theme.typography.letterSpacings.wide};
+
+    text-transform: uppercase;
+
+    color: ${({ theme }) => theme.colors.brand.soft};
+
+    background: ${({ theme }) => theme.colors.brand.fade};
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
   `,
 
   text: css`
     font-family: ${({ theme }) => theme.typography.families.body};
-    font-size: ${({ theme }) => theme.typography.fontSizes.base};
+    font-size: ${({ theme }) => theme.typography.fontSizes.sm};
     font-weight: ${({ theme }) => theme.typography.fontWeights.regular};
     line-height: ${({ theme }) => theme.typography.lineHeights.relaxed};
     letter-spacing: ${({ theme }) => theme.typography.letterSpacings.normal};
@@ -57,12 +69,18 @@ const variants = {
   `,
 
   button: css`
+    position: relative;
+    z-index: 1;
+
     font-family: ${({ theme }) => theme.typography.families.body};
-    font-size: ${({ theme }) => theme.typography.fontSizes.sm};
-    font-weight: ${({ theme }) => theme.typography.fontWeights.semibold};
-    line-height: ${({ theme }) => theme.typography.lineHeights.normal};
+    font-size: ${({ theme }) => theme.typography.fontSizes.xs};
+    font-weight: ${({ theme }) => theme.typography.fontWeights.bold};
+    line-height: 1;
     letter-spacing: ${({ theme }) => theme.typography.letterSpacings.wide};
     text-transform: uppercase;
+    text-decoration: none;
+
+    color: inherit;
   `,
 
   link: css`
@@ -80,7 +98,35 @@ const variants = {
       opacity: 0.7;
     }
   `,
+
+  nav: css<ITypographyStyleProps>`
+    font-family: ${({ theme }) => theme.typography.families.body};
+    font-size: ${({ theme }) => theme.typography.fontSizes.xs};
+    font-weight: ${({ theme }) => theme.typography.fontWeights.semibold};
+    line-height: ${({ theme }) => theme.typography.lineHeights.normal};
+    letter-spacing: ${({ theme }) => theme.typography.letterSpacings.wide};
+
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.25s ease;
+
+    color: ${({ theme, $active }) =>
+      $active ? theme.colors.neutral.soft : theme.colors.neutral.light};
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.neutral.soft};
+    }
+  `,
 }
+
+export const Highlight = styled.span`
+  background: ${({ theme }) => theme.colors.brand.fade};
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+`
 
 export const Typography = styled.p<ITypographyStyleProps>`
   margin: 0;
@@ -88,4 +134,9 @@ export const Typography = styled.p<ITypographyStyleProps>`
   color: inherit;
 
   ${({ $variant }) => variants[$variant]}
+  ${({ $uppercase }) =>
+    $uppercase &&
+    css`
+      text-transform: uppercase;
+    `}
 `

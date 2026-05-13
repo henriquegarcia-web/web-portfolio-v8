@@ -1,9 +1,10 @@
 import { memo } from 'react'
+import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import type { LinkProps } from 'react-router-dom'
 
 import * as S from './styles'
 
-import type { ButtonHTMLAttributes, ReactNode } from 'react'
-import type { LinkProps } from 'react-router-dom'
+import { Typography } from '@/components/atoms'
 import type {
   ButtonVariantTypes,
   PostionTypes,
@@ -46,7 +47,11 @@ const Button = ({
     <>
       {icon && iconPosition === 'left' && <S.IconWrapper>{icon}</S.IconWrapper>}
 
-      {!hasOnlyIcon && children && <S.Label>{children}</S.Label>}
+      {!hasOnlyIcon && children && (
+        <Typography variant="button" as="span">
+          {children}
+        </Typography>
+      )}
 
       {icon && iconPosition === 'right' && (
         <S.IconWrapper>{icon}</S.IconWrapper>

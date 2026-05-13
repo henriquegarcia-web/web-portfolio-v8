@@ -2,6 +2,8 @@
 
 import * as S from './styles'
 
+import { Typography } from '@/components/atoms'
+
 // ================== COMPONENT TYPES
 
 interface INavLink {
@@ -14,8 +16,10 @@ interface INavLink {
 
 const NavLink = ({ label, path, active }: INavLink) => {
   return (
-    <S.NavLink href={path} $active={active}>
-      {label}
+    <S.NavLink href={path} data-active={active}>
+      <Typography variant="nav" as="p" active={active}>
+        {label}
+      </Typography>
     </S.NavLink>
   )
 }
