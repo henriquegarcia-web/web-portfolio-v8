@@ -69,4 +69,8 @@ export const BackgroundVideo = styled.video`
   opacity: 0.2;
 
   object-fit: cover;
+
+  @media (prefers-reduced-motion: reduce) {
+    display: none;
+  }
 `

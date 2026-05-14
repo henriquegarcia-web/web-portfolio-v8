@@ -4,6 +4,7 @@ import * as S from './styles'
 import { RiArrowRightUpLine } from 'react-icons/ri'
 
 import { Button, Typography } from '@/components/atoms'
+import { CONTACT_HREF } from '@/constants/site'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
 
 // ================== COMPONENT
@@ -13,7 +14,7 @@ const HeroDescription = () => {
 
   return (
     <S.HeroDescription>
-      <Typography variant="label" as="h2">
+      <Typography variant="label" as="p">
         {t('sections.inicio.label')}
       </Typography>
       <Typography
@@ -33,6 +34,7 @@ const HeroDescription = () => {
           icon={<RiArrowRightUpLine />}
           iconPosition="right"
           variant="primary"
+          href="#projetos"
         >
           {t('sections.inicio.ctaProjects')}
         </Button>
@@ -40,6 +42,7 @@ const HeroDescription = () => {
           icon={<RiArrowRightUpLine />}
           iconPosition="right"
           variant="secondary"
+          href={CONTACT_HREF}
         >
           {t('sections.inicio.ctaContact')}
         </Button>

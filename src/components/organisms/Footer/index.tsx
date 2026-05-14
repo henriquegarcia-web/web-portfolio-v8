@@ -6,6 +6,7 @@ import { RiArrowRightUpLine } from 'react-icons/ri'
 import { Button, Logo, Typography } from '@/components/atoms'
 import { FooterList, SocialLinksRow } from '@/components/molecules'
 import { landingSections } from '@/constants/landingSections'
+import { CONTACT_HREF } from '@/constants/site'
 import { techStack } from '@/constants/stack'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
 
@@ -46,17 +47,27 @@ const Footer = () => {
             <SocialLinksRow />
           </S.FooterColumn>
           <S.FooterColumn>
-            <FooterList title="Navegação" items={navigationItems} />
+            <FooterList
+              title={t('sections.footer.navigationTitle')}
+              items={navigationItems}
+            />
           </S.FooterColumn>
           <S.FooterColumn>
-            <FooterList title="Tecnologias" items={techItems} />
+            <FooterList
+              title={t('sections.footer.technologiesTitle')}
+              items={techItems}
+            />
           </S.FooterColumn>
           <S.FooterColumn>
-            <FooterList title="Vamos conversar" items={contactItems} />
+            <FooterList
+              title={t('sections.footer.contactTitle')}
+              items={contactItems}
+            />
             <Button
               icon={<RiArrowRightUpLine />}
               iconPosition="right"
               variant="secondary"
+              href={CONTACT_HREF}
             >
               {t('sections.cta.ctaContact')}
             </Button>

@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://henriquegarcia.dev.br/sitemap.xml

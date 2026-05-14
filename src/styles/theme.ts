@@ -1,7 +1,7 @@
-import { tokens } from './tokens';
+import { tokens } from './tokens'
 
 export const appTheme = {
   ...tokens,
-} as const;
+} as const
 
-export type AppTheme = typeof appTheme;
+export type AppTheme = typeof appTheme

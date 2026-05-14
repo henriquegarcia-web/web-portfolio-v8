@@ -1,6 +1,6 @@
 // ================== IMPORTS
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
 
 import * as S from './styles'
@@ -13,6 +13,9 @@ import { useAppTranslation } from '@/hooks/useAppTranslation'
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null)
+  const sidebarRef = useRef<HTMLElement | null>(null)
+  const toggleButtonRef = useRef<HTMLButtonElement | null>(null)
 
   const { t } = useAppTranslation()
 
@@ -24,10 +27,65 @@ const MobileMenu = () => {
     setIsOpen(false)
   }
 
+  useEffect(() => {
+    if (!isOpen) return
+
+    const previouslyFocusedElement = document.activeElement
+    const originalOverflow = document.body.style.overflow
+    const toggleButton = toggleButtonRef.current
+
+    document.body.style.overflow = 'hidden'
+    closeButtonRef.current?.focus()
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        handleCloseMenu()
+        return
+      }
+
+      if (event.key !== 'Tab' || !sidebarRef.current) return
+
+      const focusableElements = Array.from(
+        sidebarRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled])',
+        ),
+      )
+
+      const firstElement = focusableElements[0]
+      const lastElement = focusableElements.at(-1)
+
+      if (!firstElement || !lastElement) return
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault()
+        lastElement.focus()
+      }
+
+      if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault()
+        firstElement.focus()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.body.style.overflow = originalOverflow
+      document.removeEventListener('keydown', handleKeyDown)
+
+      if (previouslyFocusedElement instanceof HTMLElement) {
+        previouslyFocusedElement.focus()
+      } else {
+        toggleButton?.focus()
+      }
+    }
+  }, [isOpen])
+
   return (
     <S.MobileMenu aria-label="Mobile menu">
       <S.ToggleWrapper>
         <Button
+          ref={toggleButtonRef}
           variant="secondary"
           size="md"
           icon={isOpen ? <HiX /> : <HiMenuAlt3 />}
@@ -35,63 +93,62 @@ const MobileMenu = () => {
           onClick={handleToggleMenu}
           aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={isOpen}
+          aria-controls="mobile-navigation-menu"
         />
       </S.ToggleWrapper>
 
-      <S.AnimatePresence>
-        {isOpen && (
-          <>
-            <S.Overlay
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              onClick={handleCloseMenu}
-            />
+      {isOpen && (
+        <>
+          <S.Overlay
+            type="button"
+            aria-label="Fechar menu mobile"
+            onClick={handleCloseMenu}
+          />
 
-            <S.Sidebar
-              initial={{ x: '100%', opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: '100%', opacity: 0 }}
-              transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <S.Header>
-                <Typography variant="label" as="strong">
-                  Menu
-                </Typography>
+          <S.Sidebar
+            id="mobile-navigation-menu"
+            ref={sidebarRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu de navegacao"
+          >
+            <S.Header>
+              <Typography variant="label" as="strong">
+                Menu
+              </Typography>
 
-                <Button
-                  variant="secondary"
-                  size="sm"
-                  icon={<HiX />}
-                  iconPosition="only"
-                  onClick={handleCloseMenu}
-                  aria-label="Fechar menu"
-                />
-              </S.Header>
+              <Button
+                ref={closeButtonRef}
+                variant="secondary"
+                size="sm"
+                icon={<HiX />}
+                iconPosition="only"
+                onClick={handleCloseMenu}
+                aria-label="Fechar painel de navegacao"
+              />
+            </S.Header>
 
-              <S.Content>
-                <S.NavigationList>
-                  {landingSections
-                    .filter((section) => section.showInNavigation)
-                    .map((section) => (
-                      <S.NavigationItem key={section.id}>
-                        <S.NavigationLink
-                          href={`#${section.id}`}
-                          onClick={handleCloseMenu}
-                        >
-                          <Typography variant="nav" as="span">
-                            {t(`sections.${section.id}.nav`)}
-                          </Typography>
-                        </S.NavigationLink>
-                      </S.NavigationItem>
-                    ))}
-                </S.NavigationList>
-              </S.Content>
-            </S.Sidebar>
-          </>
-        )}
-      </S.AnimatePresence>
+            <S.Content>
+              <S.NavigationList role="list">
+                {landingSections
+                  .filter((section) => section.showInNavigation)
+                  .map((section) => (
+                    <S.NavigationItem key={section.id}>
+                      <S.NavigationLink
+                        href={`#${section.id}`}
+                        onClick={handleCloseMenu}
+                      >
+                        <Typography variant="nav" as="span">
+                          {t(`sections.${section.id}.nav`)}
+                        </Typography>
+                      </S.NavigationLink>
+                    </S.NavigationItem>
+                  ))}
+              </S.NavigationList>
+            </S.Content>
+          </S.Sidebar>
+        </>
+      )}
     </S.MobileMenu>
   )
 }

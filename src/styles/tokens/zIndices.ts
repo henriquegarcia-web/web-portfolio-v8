@@ -6,4 +6,4 @@ export const zIndices = {
   overlay: 30,
   modal: 40,
   toast: 50,
-} as const;
+} as const

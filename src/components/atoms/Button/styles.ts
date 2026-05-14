@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import { Link } from 'react-router-dom'
 
 import type { ButtonVariantTypes, SizeTypes } from '@/types/styles'
 
@@ -169,7 +168,7 @@ const buttonStyles = css<IButtonStyleProps>`
   }
 `
 
-export const ButtonLink = styled(Link)<IButtonStyleProps>`
+export const ButtonLink = styled.a<IButtonStyleProps>`
   ${buttonStyles}
 `
 

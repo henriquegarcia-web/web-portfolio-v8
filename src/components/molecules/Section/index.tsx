@@ -30,7 +30,15 @@ const Section = ({ section }: ISection) => {
         $background={isColor || isImage ? background.value : undefined}
       >
         {isVideo && (
-          <S.BackgroundVideo autoPlay muted loop playsInline>
+          <S.BackgroundVideo
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden
+            disablePictureInPicture
+          >
             <source src={background.value} type="video/mp4" />
           </S.BackgroundVideo>
         )}

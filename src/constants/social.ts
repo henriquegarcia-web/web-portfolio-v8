@@ -1,4 +1,5 @@
 import type { SocialIdTypes } from '@/types/styles'
+import { SITE_CONFIG } from './site'
 
 export interface ISocialLink {
   id: SocialIdTypes
@@ -10,26 +11,26 @@ export const SOCIAL_LINKS = [
   {
     id: 'github',
     name: 'GitHub',
-    link: 'https://github.com/henriquegarcia-web',
+    link: SITE_CONFIG.socialLinks.github,
   },
   {
     id: 'linkedin',
     name: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/henrique-garcia-dev/',
+    link: SITE_CONFIG.socialLinks.linkedin,
   },
   {
     id: 'instagram',
     name: 'Instagram',
-    link: 'http://instagram.com/henrique.jsx',
+    link: SITE_CONFIG.socialLinks.instagram,
   },
   {
     id: 'email',
     name: 'E-mail',
-    link: 'mailto:henriquegarcia.tech@gmail.com',
+    link: `mailto:${SITE_CONFIG.contactEmail}`,
   },
   {
     id: 'behance',
     name: 'Behance',
-    link: 'https://www.behance.net/henrique-garcia-dev',
+    link: SITE_CONFIG.socialLinks.behance,
   },
 ] satisfies ISocialLink[]

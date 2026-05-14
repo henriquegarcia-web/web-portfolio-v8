@@ -1,6 +1,10 @@
-import { memo } from 'react'
-import type { ButtonHTMLAttributes, ReactNode } from 'react'
-import type { LinkProps } from 'react-router-dom'
+import { forwardRef, memo } from 'react'
+import type {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactNode,
+  Ref,
+} from 'react'
 
 import * as S from './styles'
 
@@ -20,74 +24,85 @@ type ButtonBaseProps = {
 }
 
 type ButtonAsButtonProps = ButtonBaseProps &
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'> & {
-    type?: 'button' | 'submit'
+  ButtonHTMLAttributes<HTMLButtonElement> & {
+    href?: never
   }
 
-type ButtonAsLinkProps = ButtonBaseProps &
-  Omit<LinkProps, 'to'> & {
-    type: 'link'
-    path: string
+type ButtonAsAnchorProps = ButtonBaseProps &
+  AnchorHTMLAttributes<HTMLAnchorElement> & {
+    href: string
   }
 
-type IButton = ButtonAsButtonProps | ButtonAsLinkProps
+type IButton = ButtonAsButtonProps | ButtonAsAnchorProps
 
-const Button = ({
-  variant = 'primary',
-  size = 'md',
-  children,
-  icon,
-  iconPosition = 'left',
-  type = 'button',
-  ...props
-}: IButton) => {
-  const hasOnlyIcon = Boolean(icon && iconPosition === 'only')
+const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, IButton>(
+  (
+    {
+      variant = 'primary',
+      size = 'md',
+      children,
+      icon,
+      iconPosition = 'left',
+      ...props
+    },
+    ref,
+  ) => {
+    const hasOnlyIcon = Boolean(icon && iconPosition === 'only')
 
-  const content = (
-    <>
-      {icon && iconPosition === 'left' && <S.IconWrapper>{icon}</S.IconWrapper>}
+    const content = (
+      <>
+        {icon && iconPosition === 'left' && (
+          <S.IconWrapper>{icon}</S.IconWrapper>
+        )}
 
-      {!hasOnlyIcon && children && (
-        <Typography variant="button" as="span">
-          {children}
-        </Typography>
-      )}
+        {!hasOnlyIcon && children && (
+          <Typography variant="button" as="span">
+            {children}
+          </Typography>
+        )}
 
-      {icon && iconPosition === 'right' && (
-        <S.IconWrapper>{icon}</S.IconWrapper>
-      )}
+        {icon && iconPosition === 'right' && (
+          <S.IconWrapper>{icon}</S.IconWrapper>
+        )}
 
-      {icon && hasOnlyIcon && <S.IconWrapper>{icon}</S.IconWrapper>}
-    </>
-  )
+        {icon && hasOnlyIcon && <S.IconWrapper>{icon}</S.IconWrapper>}
+      </>
+    )
 
-  if (type === 'link') {
-    const { path, ...linkProps } = props as ButtonAsLinkProps
+    if ('href' in props && props.href) {
+      const { href, ...anchorProps } = props as ButtonAsAnchorProps
+
+      return (
+        <S.ButtonLink
+          ref={ref as Ref<HTMLAnchorElement>}
+          href={href}
+          $variant={variant}
+          $size={size}
+          $iconOnly={hasOnlyIcon}
+          {...anchorProps}
+        >
+          {content}
+        </S.ButtonLink>
+      )
+    }
+
+    const { type = 'button', ...buttonProps } = props as ButtonAsButtonProps
 
     return (
-      <S.ButtonLink
-        to={path}
+      <S.Button
+        ref={ref as Ref<HTMLButtonElement>}
+        type={type}
         $variant={variant}
         $size={size}
         $iconOnly={hasOnlyIcon}
-        {...linkProps}
+        {...buttonProps}
       >
         {content}
-      </S.ButtonLink>
+      </S.Button>
     )
-  }
+  },
+)
 
-  return (
-    <S.Button
-      type={type}
-      $variant={variant}
-      $size={size}
-      $iconOnly={hasOnlyIcon}
-      {...(props as ButtonAsButtonProps)}
-    >
-      {content}
-    </S.Button>
-  )
-}
+Button.displayName = 'Button'
 
 export default memo(Button)

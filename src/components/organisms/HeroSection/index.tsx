@@ -11,7 +11,6 @@ const HeroSection = () => {
     <S.HeroSection>
       <S.HeroSectionLeft>
         <HeroDescription />
-        {/* <TechStackRow /> */}
       </S.HeroSectionLeft>
     </S.HeroSection>
   )

@@ -46,6 +46,8 @@ const Logo = ({ size = 'md' }: ILogo) => {
       alt="Logo de Henrique Garcia"
       width={imageSize.width}
       height={imageSize.height}
+      loading="eager"
+      fetchPriority="high"
     />
   )
 }

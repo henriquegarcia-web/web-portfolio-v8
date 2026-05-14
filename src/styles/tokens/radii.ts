@@ -7,4 +7,4 @@ export const radii = {
   xl: '1.5rem',
   pill: '999px',
   round: '50%',
-} as const;
+} as const

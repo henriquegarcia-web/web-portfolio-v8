@@ -1,12 +1,12 @@
-import { breakpoints } from './breakpoints';
-import { colors } from './colors';
-import { motion } from './motion';
-import { radii } from './radii';
-import { shadows } from './shadows';
-import { sizes } from './sizes';
-import { spacing } from './spacing';
-import { typography } from './typography';
-import { zIndices } from './zIndices';
+import { breakpoints } from './breakpoints'
+import { colors } from './colors'
+import { motion } from './motion'
+import { radii } from './radii'
+import { shadows } from './shadows'
+import { sizes } from './sizes'
+import { spacing } from './spacing'
+import { typography } from './typography'
+import { zIndices } from './zIndices'
 
 export const tokens = {
   breakpoints,
@@ -18,4 +18,4 @@ export const tokens = {
   spacing,
   typography,
   zIndices,
-} as const;
+} as const

@@ -6,10 +6,14 @@ import { RiArrowRightUpLine } from 'react-icons/ri'
 import { Button, Logo } from '@/components/atoms'
 import { LanguageSelector, Navigator } from '@/components/molecules'
 import { MobileMenu } from '@/components/organisms'
+import { CONTACT_HREF } from '@/constants/site'
+import { useAppTranslation } from '@/hooks/useAppTranslation'
 
 // ================== COMPONENT
 
 const Header = () => {
+  const { t } = useAppTranslation()
+
   return (
     <S.Header>
       <S.HeaderWrapper>
@@ -21,8 +25,9 @@ const Header = () => {
               icon={<RiArrowRightUpLine />}
               iconPosition="right"
               variant="secondary"
+              href={CONTACT_HREF}
             >
-              Vamos Conversar
+              {t('sections.cta.ctaContact')}
             </Button>
             <LanguageSelector />
           </S.HeaderCtas>

@@ -34,7 +34,11 @@ const ServicesCarousel = () => {
   })
 
   return (
-    <S.ServicesCarousel>
+    <S.ServicesCarousel
+      role="group"
+      aria-roledescription="carousel"
+      aria-label="Servicos"
+    >
       <S.CarouselViewport>
         <S.CarouselTrack
           $translateX={translateX}
@@ -44,14 +48,20 @@ const ServicesCarousel = () => {
           onTransitionEnd={handleTransitionEnd}
           {...dragHandlers}
         >
-          {carouselItems.map((service, index) => (
-            <S.CarouselItem
-              key={`${service.id}-${index}`}
-              $itemWidth={itemWidth}
-            >
-              <ServiceCard service={service} />
-            </S.CarouselItem>
-          ))}
+          {carouselItems.map((service, index) => {
+            const isClone =
+              index < itemsPerView || index >= itemsPerView + services.length
+
+            return (
+              <S.CarouselItem
+                key={`${service.id}-${index}`}
+                $itemWidth={itemWidth}
+                aria-hidden={isClone}
+              >
+                <ServiceCard service={service} />
+              </S.CarouselItem>
+            )
+          })}
         </S.CarouselTrack>
       </S.CarouselViewport>
 

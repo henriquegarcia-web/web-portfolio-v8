@@ -15,12 +15,16 @@ export const GlobalStyles = createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
-    user-select: none;
   }
 
   html {
     font-size: 16px;
     scroll-behavior: smooth;
+    scroll-padding-top: ${({ theme }) => theme.sizes.header.desktop};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+      scroll-padding-top: ${({ theme }) => theme.sizes.header.mobile};
+    }
   }
 
   body {
@@ -63,6 +67,16 @@ export const GlobalStyles = createGlobalStyle`
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
   }
 
   ul[role='list'],

@@ -62,8 +62,8 @@ export const ProjectContent = styled.div`
   padding: ${({ theme }) => theme.spacing[5]} ${({ theme }) => theme.spacing[4]};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    padding: ${({ theme }) => theme.spacing[5]} ${({ theme }) => theme.spacing[3]}
-      ${({ theme }) => theme.spacing[4]};
+    padding: ${({ theme }) => theme.spacing[5]}
+      ${({ theme }) => theme.spacing[3]} ${({ theme }) => theme.spacing[4]};
   }
 `
 

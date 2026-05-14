@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const FooterList = styled.nav`
+export const FooterList = styled.div`
   width: fit-content;
 `
 

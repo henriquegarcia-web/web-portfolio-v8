@@ -1,10 +1,11 @@
-import '@testing-library/jest-dom/vitest';
-import { cleanup } from '@testing-library/react';
-import { afterEach, vi } from 'vitest';
+import '@testing-library/jest-dom/vitest'
+import { cleanup } from '@testing-library/react'
+import 'vitest-axe/extend-expect'
+import { afterEach, vi } from 'vitest'
 
 const canvasContextMock = vi.fn((contextId: string) => {
   if (contextId !== '2d') {
-    return null;
+    return null
   }
 
   return {
@@ -32,14 +33,28 @@ const canvasContextMock = vi.fn((contextId: string) => {
     transform: vi.fn(),
     rect: vi.fn(),
     clip: vi.fn(),
-  } as unknown as CanvasRenderingContext2D;
-}) as unknown as HTMLCanvasElement['getContext'];
+  } as unknown as CanvasRenderingContext2D
+}) as unknown as HTMLCanvasElement['getContext']
 
 Object.defineProperty(HTMLCanvasElement.prototype, 'getContext', {
   value: canvasContextMock,
   writable: true,
-});
+})
+
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: vi.fn().mockImplementation((query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  })),
+})
 
 afterEach(() => {
-  cleanup();
-});
+  cleanup()
+})

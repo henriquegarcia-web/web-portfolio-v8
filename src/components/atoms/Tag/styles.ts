@@ -21,7 +21,8 @@ const variants = {
   `,
   tech: css`
     height: 20px;
-    padding: 0 ${({ theme }) => theme.spacing[2]} 0 ${({ theme }) => theme.spacing[1]};
+    padding: 0 ${({ theme }) => theme.spacing[2]} 0
+      ${({ theme }) => theme.spacing[1]};
 
     border-radius: ${({ theme }) => theme.radii.pill};
     background-color: ${({ theme }) => theme.colors.tag.accent};

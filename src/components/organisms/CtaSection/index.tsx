@@ -4,6 +4,7 @@ import * as S from './styles'
 import { RiArrowRightUpLine } from 'react-icons/ri'
 
 import { Button, Typography } from '@/components/atoms'
+import { CONTACT_HREF } from '@/constants/site'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
 
 // ================== COMPONENT
@@ -14,7 +15,7 @@ const CtaSection = () => {
   return (
     <S.CtaSection>
       <S.CtaSectionContent>
-        <Typography variant="title" as="p">
+        <Typography variant="title" as="h2">
           {t('sections.cta.headline')}
         </Typography>
         {/* <Typography variant="text" as="p">
@@ -24,6 +25,7 @@ const CtaSection = () => {
           icon={<RiArrowRightUpLine />}
           iconPosition="right"
           variant="primary"
+          href={CONTACT_HREF}
         >
           {t('sections.cta.ctaContact')}
         </Button>

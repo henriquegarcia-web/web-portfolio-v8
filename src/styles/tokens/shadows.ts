@@ -4,4 +4,4 @@ export const shadows = {
   md: '0 18px 48px rgba(2, 6, 23, 0.26)',
   lg: '0 24px 64px rgba(2, 6, 23, 0.32)',
   focus: '0 0 0 3px rgba(147, 197, 253, 0.35)',
-} as const;
+} as const

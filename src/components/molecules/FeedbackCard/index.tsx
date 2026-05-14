@@ -28,7 +28,13 @@ const FeedbackCard = ({ feedback }: IFeedbackCard) => {
       </Typography>
       <S.FeedbackDetailsWrapper>
         <S.FeedbackProfilePicture>
-          <Image src={feedback.profilePicture} alt="" width={50} height={50} />
+          <Image
+            src={feedback.profilePicture}
+            alt=""
+            width={50}
+            height={50}
+            aria-hidden
+          />
         </S.FeedbackProfilePicture>
         <S.FeedbackDetails>
           <Typography variant="caption" as="p">

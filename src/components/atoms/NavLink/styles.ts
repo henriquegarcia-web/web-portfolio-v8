@@ -8,4 +8,9 @@ export const NavLink = styled.a`
   justify-content: center;
 
   padding-inline: ${({ theme }) => theme.spacing[3]};
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.focus};
+    outline-offset: 3px;
+  }
 `

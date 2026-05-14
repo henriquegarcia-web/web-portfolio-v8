@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
-export const SocialLink = styled.a`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
+export const Link = styled.a`
   &:focus-visible {
     outline: 2px solid ${({ theme }) => theme.colors.focus};
     outline-offset: 3px;

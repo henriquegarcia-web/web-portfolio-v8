@@ -9,7 +9,7 @@ import { SOCIAL_LINKS } from '@/constants/social'
 
 const SocialLinksRow = () => {
   return (
-    <S.SocialLinksRow>
+    <S.SocialLinksRow aria-label="Redes sociais">
       {SOCIAL_LINKS.filter((social) => social.id !== 'email').map((social) => (
         <SocialLink key={social.id} icon={social.id} />
       ))}

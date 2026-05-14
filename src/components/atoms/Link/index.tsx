@@ -1,6 +1,4 @@
-// ================== IMPORTS
-
-import { Link as RRDLink } from 'react-router-dom'
+import * as S from './styles'
 
 import { Typography } from '@/components/atoms'
 
@@ -15,11 +13,11 @@ interface ILink {
 
 const Link = ({ to, children }: ILink) => {
   return (
-    <RRDLink to={to}>
-      <Typography variant="text" as="p">
+    <S.Link href={to}>
+      <Typography variant="text" as="span">
         {children}
       </Typography>
-    </RRDLink>
+    </S.Link>
   )
 }
 

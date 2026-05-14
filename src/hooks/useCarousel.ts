@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { PointerEvent } from 'react'
 
 interface IUseCarousel<T> {
@@ -68,7 +68,10 @@ export const useCarousel = <T>({
   itemsPerView = 3,
   loop = true,
 }: IUseCarousel<T>) => {
-  const [currentIndex, setCurrentIndex] = useState(itemsPerView)
+  const hasMounted = useRef(false)
+  const [currentIndex, setCurrentIndex] = useState(() =>
+    loop ? itemsPerView : 0,
+  )
   const [enableTransition, setEnableTransition] = useState(true)
   const [dragStartX, setDragStartX] = useState<number | null>(null)
   const [dragOffset, setDragOffset] = useState(0)
@@ -169,6 +172,11 @@ export const useCarousel = <T>({
   }, [currentIndex, items.length, itemsPerView, loop])
 
   useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true
+      return
+    }
+
     setEnableTransition(false)
     setCurrentIndex(loop ? itemsPerView : 0)
   }, [itemsPerView, loop])

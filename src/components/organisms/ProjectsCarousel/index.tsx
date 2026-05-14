@@ -34,7 +34,11 @@ const ProjectsCarousel = () => {
   })
 
   return (
-    <S.ProjectsCarousel>
+    <S.ProjectsCarousel
+      role="group"
+      aria-roledescription="carousel"
+      aria-label="Projetos em destaque"
+    >
       <S.CarouselViewport>
         <S.CarouselTrack
           $translateX={translateX}
@@ -44,14 +48,20 @@ const ProjectsCarousel = () => {
           onTransitionEnd={handleTransitionEnd}
           {...dragHandlers}
         >
-          {carouselItems.map((project, index) => (
-            <S.CarouselItem
-              key={`${project.id}-${index}`}
-              $itemWidth={itemWidth}
-            >
-              <ProjectCard project={project} />
-            </S.CarouselItem>
-          ))}
+          {carouselItems.map((project, index) => {
+            const isClone =
+              index < itemsPerView || index >= itemsPerView + projects.length
+
+            return (
+              <S.CarouselItem
+                key={`${project.id}-${index}`}
+                $itemWidth={itemWidth}
+                aria-hidden={isClone}
+              >
+                <ProjectCard project={project} />
+              </S.CarouselItem>
+            )
+          })}
         </S.CarouselTrack>
       </S.CarouselViewport>
 

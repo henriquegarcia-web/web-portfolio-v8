@@ -8,7 +8,7 @@ export const Footer = styled.footer`
   background-color: ${({ theme }) => theme.colors.neutral.dark};
 `
 
-export const FooterWrapper = styled.footer`
+export const FooterWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;

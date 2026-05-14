@@ -33,8 +33,7 @@ const SectionHeader = ({ label, headline, highlight, cta }: ISectionHeader) => {
             icon={<RiArrowRightUpLine />}
             iconPosition="right"
             variant="secondary"
-            type="link"
-            path={cta.path}
+            href={cta.path}
           >
             {cta.label}
           </Button>

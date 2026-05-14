@@ -23,10 +23,9 @@ const FooterList = ({ title, items }: IFooterList) => {
   return (
     <S.FooterList>
       <S.FooterListTitle>
-
-      <Typography variant="subtitle" as="p" highlight={title}>
-        {title}
-      </Typography>
+        <Typography variant="subtitle" as="p" highlight={title}>
+          {title}
+        </Typography>
       </S.FooterListTitle>
       {items.map((item) => {
         if (!!item.path && item.path !== '')

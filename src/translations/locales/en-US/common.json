@@ -1,40 +1,151 @@
 {
   "sections": {
     "inicio": {
-      "label": "",
-      "headline": "",
-      "legend": "",
-      "ctaProjects": "",
-      "ctaContact": ""
+      "nav": "Home",
+      "label": "Developer • Solver • Innovator",
+      "headline": "I turn ideas into digital solutions that create real impact.",
+      "headlineFocus": "real impact",
+      "legend": "A programmer passionate about creating experiences, automating processes, and building systems that move businesses forward.",
+      "ctaProjects": "View projects",
+      "ctaContact": "Let's talk"
     },
     "sobre": {
-      "label": "",
-      "headline": "",
-      "about": "",
-      "experience": "",
-      "projects": "",
-      "results": ""
+      "nav": "About",
+      "label": "About Me",
+      "headline": "More than code. \n I create solutions.",
+      "headlineFocus": "solutions",
+      "about": "I believe real technology is not only about clean code, but about understanding deep problems and delivering simple, scalable solutions that truly make a difference."
     },
     "servicos": {
-      "label": "Services",
-      "headline": ""
+      "nav": "Services",
+      "label": "What I do",
+      "headline": "Solutions I build"
     },
     "projetos": {
-      "label": "Projects",
-      "headline": ""
+      "nav": "Projects",
+      "label": "Featured projects",
+      "headline": "Some results I have delivered",
+      "cta": "View all projects"
     },
     "feedback": {
-      "label": "Feedbacks",
-      "headline": ""
+      "nav": "Feedback",
+      "label": "Feedback",
+      "headline": "What people say about my work"
     },
     "processos": {
-      "label": "Process",
-      "headline": ""
+      "nav": "Process",
+      "label": "My process",
+      "headline": "How I work"
     },
     "cta": {
-      "headline": "",
-      "legend": "",
-      "ctaContact": ""
+      "nav": "Contact",
+      "headline": "Let's build something amazing together?",
+      "legend": "Have a challenge, idea, or project? I am ready to turn it into a solution.",
+      "ctaContact": "Let's talk"
+    },
+    "footer": {
+      "headline": "I build digital solutions that automate and accelerate businesses.",
+      "navigationTitle": "Navigation",
+      "technologiesTitle": "Technologies",
+      "contactTitle": "Let's talk",
+      "availability": "Available for proposals, freelance work, and partnerships.",
+      "rights": "2026 - All rights reserved",
+      "madeBy": "Made with passion for code."
+    }
+  },
+  "components": {
+    "techStack": {
+      "title": "My stack",
+      "react": "React.js",
+      "nextjs2": "Next.js",
+      "typescript": "TypeScript",
+      "nodejs": "Node.js",
+      "docker": "Docker"
+    },
+    "indicators": {
+      "experience": "Years of Experience",
+      "projects": "Delivered Projects",
+      "results": "Focus on Results"
+    },
+    "services": {
+      "web-mobile": {
+        "title": "Web & Mobile",
+        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+      },
+      "custom-systems": {
+        "title": "Custom Systems",
+        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+      },
+      "automations": {
+        "title": "AI Automations",
+        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+      },
+      "api": {
+        "title": "API & Backends",
+        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+      },
+      "consultancy": {
+        "title": "Technology Consulting",
+        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+      }
+    },
+    "projects": {
+      "uniw": {
+        "title": "Multiplatform E-commerce",
+        "description": "A multi-tenant e-commerce platform that connects sellers, customers, and suppliers, with full control for the administrator.",
+        "tag": "System"
+      },
+      "mandato-digital": {
+        "title": "Political Management System",
+        "description": "A political management platform that optimizes voter control, communication, and campaign activities.",
+        "tag": "System"
+      },
+      "hungry-hub": {
+        "title": "Online Menu System",
+        "description": "An online platform for restaurant menu management, enabling real-time updates and online orders.",
+        "tag": "Delivery"
+      },
+      "quick-shop": {
+        "title": "T-shirt E-commerce",
+        "description": "A modern and dynamic e-commerce experience focused on selling T-shirts, with a clean design and optimized checkout flow.",
+        "tag": "E-commerce"
+      }
+    },
+    "feedbacks": {
+      "feedback1": {
+        "role": "CEO",
+        "message": "Labore voluptate quo repudiandae iusto animi repellat quod nemo sit hic dolores natus velit."
+      },
+      "feedback2": {
+        "role": "Entrepreneur",
+        "message": "Labore voluptate quo repudiandae iusto animi repellat quod nemo sit hic dolores natus velit."
+      },
+      "feedback3": {
+        "role": "Entrepreneur",
+        "message": "Labore voluptate quo repudiandae iusto animi repellat quod nemo sit hic dolores natus velit."
+      }
+    },
+    "processes": {
+      "step1": {
+        "title": "Understand",
+        "description": "I listen, ask questions, and dig into the problem to understand what truly matters."
+      },
+      "step2": {
+        "title": "Plan",
+        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
+      },
+      "step3": {
+        "title": "Build",
+        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
+      },
+      "step4": {
+        "title": "Deliver",
+        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
+      },
+      "step5": {
+        "title": "Evolve",
+        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
+      }
     }
   }
 }

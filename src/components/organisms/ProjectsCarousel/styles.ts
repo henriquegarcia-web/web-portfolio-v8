@@ -31,7 +31,10 @@ export const CarouselTrack = styled.div<ICarouselTrack>`
   display: flex;
   cursor: ${({ $isDragging }) => ($isDragging ? 'grabbing' : 'grab')};
   transform: translateX(
-    calc(${({ $translateX }) => $translateX}% + ${({ $dragOffset }) => $dragOffset}px)
+    calc(
+      ${({ $translateX }) => $translateX}% +
+        ${({ $dragOffset }) => $dragOffset}px
+    )
   );
   transition: ${({ $enableTransition, $isDragging }) =>
     $enableTransition && !$isDragging ? 'transform 0.45s ease' : 'none'};
@@ -78,6 +81,11 @@ const CarouselControl = styled.button`
 
   &:hover {
     border-color: ${({ theme }) => theme.colors.border.strong};
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.focus};
+    outline-offset: 3px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {

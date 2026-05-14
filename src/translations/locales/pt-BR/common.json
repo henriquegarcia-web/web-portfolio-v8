@@ -45,6 +45,9 @@
     },
     "footer": {
       "headline": "Desenvolvo soluções digitais que automatizão e impulsionam negócios.",
+      "navigationTitle": "Navegação",
+      "technologiesTitle": "Tecnologias",
+      "contactTitle": "Vamos conversar",
       "availability": "Disponível para proposta, freelance e parcerias.",
       "rights": "2026 - Todos os direitos reservados",
       "madeBy": "Feito com paixão por código."

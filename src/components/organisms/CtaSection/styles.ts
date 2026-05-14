@@ -11,7 +11,8 @@ export const CtaSection = styled.section`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     margin: ${({ theme }) => theme.spacing[12]} 0;
-    padding: ${({ theme }) => theme.spacing[8]} ${({ theme }) => theme.spacing[5]};
+    padding: ${({ theme }) => theme.spacing[8]}
+      ${({ theme }) => theme.spacing[5]};
   }
 `
 

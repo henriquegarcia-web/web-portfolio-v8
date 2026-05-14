@@ -16,8 +16,12 @@ interface INavLink {
 
 const NavLink = ({ label, path, active }: INavLink) => {
   return (
-    <S.NavLink href={path} data-active={active}>
-      <Typography variant="nav" as="p" active={active}>
+    <S.NavLink
+      href={path}
+      data-active={active}
+      aria-current={active ? 'page' : undefined}
+    >
+      <Typography variant="nav" as="span" active={active}>
         {label}
       </Typography>
     </S.NavLink>

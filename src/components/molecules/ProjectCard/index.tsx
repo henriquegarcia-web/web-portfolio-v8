@@ -66,6 +66,7 @@ const ProjectCard = ({ project }: IProjectCard) => {
                 alt={`Projeto ${project.id} - imagem ${index + 1}`}
                 width={500}
                 height={300}
+                sizes="(max-width: 48rem) 100vw, (max-width: 64rem) 50vw, 33vw"
               />
             </S.ProjectImageItem>
           ))}
@@ -77,7 +78,7 @@ const ProjectCard = ({ project }: IProjectCard) => {
       </S.ProjectImage>
 
       <S.ProjectContent>
-        <Typography variant="subtitle" as="p">
+        <Typography variant="subtitle" as="h3">
           {projectData.title}
         </Typography>
 

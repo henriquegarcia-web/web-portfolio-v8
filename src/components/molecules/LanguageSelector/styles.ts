@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components'
-import { motion } from 'framer-motion'
+
+interface IArrow {
+  $isOpen: boolean
+}
 
 const secondaryButtonStyle = css`
   color: ${({ theme }) => theme.colors.neutral.white};
@@ -102,7 +105,7 @@ export const Trigger = styled.button`
   }
 `
 
-export const Arrow = styled(motion.span)`
+export const Arrow = styled.span<IArrow>`
   position: relative;
   z-index: 1;
 
@@ -113,6 +116,9 @@ export const Arrow = styled(motion.span)`
   font-size: 0.75rem;
   color: inherit;
 
+  transform: rotate(${({ $isOpen }) => ($isOpen ? 180 : 0)}deg);
+  transition: transform 0.2s ease;
+
   svg {
     width: 1em;
     height: 1em;
@@ -120,7 +126,7 @@ export const Arrow = styled(motion.span)`
   }
 `
 
-export const Dropdown = styled(motion.div)`
+export const Dropdown = styled.div`
   position: absolute;
   top: calc(100% + 0.75rem);
   right: 0;
@@ -137,10 +143,23 @@ export const Dropdown = styled(motion.div)`
 
   ${secondaryButtonStyle}
 
+  animation: language-dropdown-in 0.2s ease;
   overflow: hidden;
+
+  @keyframes language-dropdown-in {
+    from {
+      opacity: 0;
+      transform: translateY(-8px) scale(0.98);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
 `
 
-export const Item = styled(motion.button)`
+export const Item = styled.button`
   position: relative;
   z-index: 1;
 
@@ -164,6 +183,16 @@ export const Item = styled(motion.button)`
 
   &:hover {
     background: rgba(255, 255, 255, 0.12);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.focus};
+    outline-offset: 2px;
   }
 `
 
