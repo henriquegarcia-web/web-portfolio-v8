@@ -3,7 +3,17 @@ import styled from 'styled-components'
 export const HeroSection = styled.section`
   display: flex;
   align-items: center;
-  height: calc(100vh - ${({ theme }) => theme.sizes.header.desktop});
+  min-height: calc(100dvh - ${({ theme }) => theme.sizes.header.desktop});
+  padding: ${({ theme }) => theme.spacing[16]} 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    min-height: calc(100dvh - ${({ theme }) => theme.sizes.header.mobile});
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    min-height: auto;
+    padding: ${({ theme }) => theme.spacing[12]} 0;
+  }
 `
 
 export const HeroSectionLeft = styled.div`
@@ -11,4 +21,8 @@ export const HeroSectionLeft = styled.div`
   flex-direction: column;
   width: 50%;
   gap: ${({ theme }) => theme.spacing[4]};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: min(100%, 38rem);
+  }
 `

@@ -13,4 +13,9 @@ export const HeroLegend = styled.div`
 export const HeroCtas = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing[2]};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    align-items: stretch;
+    flex-direction: column;
+  }
 `

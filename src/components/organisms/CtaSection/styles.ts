@@ -8,6 +8,11 @@ export const CtaSection = styled.section`
   padding: ${({ theme }) => theme.spacing[10]};
   border-radius: ${({ theme }) => theme.radii.md};
   overflow: hidden;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin: ${({ theme }) => theme.spacing[12]} 0;
+    padding: ${({ theme }) => theme.spacing[8]} ${({ theme }) => theme.spacing[5]};
+  }
 `
 
 export const CtaSectionContent = styled.div`
@@ -17,6 +22,11 @@ export const CtaSectionContent = styled.div`
   justify-content: space-between;
   gap: ${({ theme }) => theme.spacing[4]};
   width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 `
 
 export const CtaSectionBanner = styled.div`

@@ -6,6 +6,62 @@ interface IUseCarousel<T> {
   loop?: boolean
 }
 
+interface IResponsiveItemsPerView {
+  default: number
+  lg?: number
+  md?: number
+  sm?: number
+}
+
+const responsiveQueries = [
+  ['sm', '(max-width: 40rem)'],
+  ['md', '(max-width: 48rem)'],
+  ['lg', '(max-width: 64rem)'],
+] as const
+
+export const useResponsiveItemsPerView = ({
+  default: defaultItemsPerView,
+  lg,
+  md,
+  sm,
+}: IResponsiveItemsPerView) => {
+  const getItemsPerView = useCallback(() => {
+    if (typeof window === 'undefined') return defaultItemsPerView
+
+    if (sm && window.matchMedia('(max-width: 40rem)').matches) return sm
+    if (md && window.matchMedia('(max-width: 48rem)').matches) return md
+    if (lg && window.matchMedia('(max-width: 64rem)').matches) return lg
+
+    return defaultItemsPerView
+  }, [defaultItemsPerView, lg, md, sm])
+
+  const [itemsPerView, setItemsPerView] = useState(getItemsPerView)
+
+  useEffect(() => {
+    const mediaQueries = responsiveQueries
+      .filter(([key]) => ({ lg, md, sm })[key])
+      .map(([, query]) => window.matchMedia(query))
+
+    const updateItemsPerView = () => {
+      setItemsPerView(getItemsPerView())
+    }
+
+    updateItemsPerView()
+
+    mediaQueries.forEach((mediaQuery) => {
+      mediaQuery.addEventListener('change', updateItemsPerView)
+    })
+
+    return () => {
+      mediaQueries.forEach((mediaQuery) => {
+        mediaQuery.removeEventListener('change', updateItemsPerView)
+      })
+    }
+  }, [getItemsPerView, lg, md, sm])
+
+  return itemsPerView
+}
+
 export const useCarousel = <T>({
   items,
   itemsPerView = 3,
@@ -50,6 +106,11 @@ export const useCarousel = <T>({
       setCurrentIndex(items.length)
     }
   }, [currentIndex, items.length, itemsPerView, loop])
+
+  useEffect(() => {
+    setEnableTransition(false)
+    setCurrentIndex(loop ? itemsPerView : 0)
+  }, [itemsPerView, loop])
 
   useEffect(() => {
     if (!enableTransition) {

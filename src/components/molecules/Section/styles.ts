@@ -23,6 +23,10 @@ export const Section = styled.div`
   &:not(:last-child) {
     border-bottom: 1px solid ${({ theme }) => theme.colors.border.subtle};
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding-inline: ${({ theme }) => theme.spacing[3]};
+  }
 `
 
 export const SectionWrapper = styled.div`

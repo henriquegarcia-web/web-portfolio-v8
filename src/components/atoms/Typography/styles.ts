@@ -14,7 +14,15 @@ const variants = {
     font-size: ${({ theme }) => theme.typography.fontSizes['6xl']};
     font-weight: ${({ theme }) => theme.typography.fontWeights.bold};
     line-height: ${({ theme }) => theme.typography.lineHeights.tight};
-    letter-spacing: ${({ theme }) => theme.typography.letterSpacings.tighter};
+    letter-spacing: ${({ theme }) => theme.typography.letterSpacings.normal};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+      font-size: ${({ theme }) => theme.typography.fontSizes['5xl']};
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+      font-size: ${({ theme }) => theme.typography.fontSizes['4xl']};
+    }
   `,
 
   title: css`
@@ -22,7 +30,11 @@ const variants = {
     font-size: ${({ theme }) => theme.typography.fontSizes['4xl']};
     font-weight: ${({ theme }) => theme.typography.fontWeights.bold};
     line-height: ${({ theme }) => theme.typography.lineHeights.snug};
-    letter-spacing: ${({ theme }) => theme.typography.letterSpacings.tight};
+    letter-spacing: ${({ theme }) => theme.typography.letterSpacings.normal};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+      font-size: ${({ theme }) => theme.typography.fontSizes['3xl']};
+    }
   `,
 
   subtitle: css`

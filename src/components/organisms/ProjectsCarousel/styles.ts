@@ -13,6 +13,10 @@ export const ProjectsCarousel = styled.div`
   position: relative;
   display: flex;
   width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding-bottom: ${({ theme }) => theme.spacing[10]};
+  }
 `
 
 export const CarouselViewport = styled.div`
@@ -29,6 +33,7 @@ export const CarouselTrack = styled.div<ICarouselTrack>`
 
 export const CarouselItem = styled.div<ICarouselItem>`
   flex: 0 0 ${({ $itemWidth }) => $itemWidth}%;
+  min-width: 0;
   padding-inline: ${({ theme }) => theme.spacing[1]};
 
   > article {
@@ -66,14 +71,28 @@ const CarouselControl = styled.button`
   &:hover {
     border-color: ${({ theme }) => theme.colors.border.strong};
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    top: calc(100% + ${({ theme }) => theme.spacing[6]});
+  }
 `
 
 export const CarouselControlPrev = styled(CarouselControl)`
   right: 100%;
   margin-right: ${({ theme }) => theme.spacing[2]};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    right: calc(50% + ${({ theme }) => theme.spacing[1]});
+    margin-right: 0;
+  }
 `
 
 export const CarouselControlNext = styled(CarouselControl)`
   left: 100%;
   margin-left: ${({ theme }) => theme.spacing[2]};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    left: calc(50% + ${({ theme }) => theme.spacing[1]});
+    margin-left: 0;
+  }
 `

@@ -10,6 +10,10 @@ export const FeedbackCard = styled.article`
 
   background-color: ${({ theme }) => theme.colors.background.subtle};
   border: 1px solid ${({ theme }) => theme.colors.border.strong};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: ${({ theme }) => theme.spacing[4]};
+  }
 `
 
 export const FeedbackCardIcon = styled.div`

@@ -5,11 +5,17 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 import { ProjectCard } from '@/components/molecules'
 import { projects } from '@/constants/projects'
-import { useCarousel } from '@/hooks/useCarousel'
+import { useCarousel, useResponsiveItemsPerView } from '@/hooks/useCarousel'
 
 // ================== COMPONENT
 
 const ProjectsCarousel = () => {
+  const itemsPerView = useResponsiveItemsPerView({
+    default: 3,
+    lg: 2,
+    md: 1,
+  })
+
   const {
     carouselItems,
     itemWidth,
@@ -20,7 +26,7 @@ const ProjectsCarousel = () => {
     handleTransitionEnd,
   } = useCarousel({
     items: projects,
-    itemsPerView: 3,
+    itemsPerView,
     loop: true,
   })
 

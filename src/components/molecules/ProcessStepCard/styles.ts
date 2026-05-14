@@ -13,12 +13,22 @@ export const ProcessStepCard = styled.article`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing[4]};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    flex-direction: row;
+    gap: ${({ theme }) => theme.spacing[4]};
+  }
 `
 
 export const ProcessStepIconWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    align-items: flex-start;
+    min-height: 100%;
+  }
 `
 
 export const ProcessStepIcon = styled.div<IProcessColor>`
@@ -49,6 +59,15 @@ export const ProcessStepBar = styled.div<IProcessGradient>`
 
   background-image: ${({ $gradient }) => $gradient};
   /* box-shadow: 0 0 5px 0 ${({ $color }) => $color}; */
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    top: 50px;
+    right: auto;
+    left: 50%;
+    width: 3px;
+    height: calc(100% + ${({ theme }) => theme.spacing[6]});
+    transform: translateX(-50%);
+  }
 `
 
 export const ProcessStepDetails = styled.div`
@@ -56,4 +75,8 @@ export const ProcessStepDetails = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing[1]};
   padding-right: ${({ theme }) => theme.spacing[10]};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    padding-right: 0;
+  }
 `

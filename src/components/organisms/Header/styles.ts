@@ -14,6 +14,14 @@ export const Header = styled.header`
 
   background-color: ${({ theme }) => theme.colors.overlay.strong};
   backdrop-filter: blur(6px);
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    height: ${({ theme }) => theme.sizes.header.mobile};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding-inline: ${({ theme }) => theme.spacing[3]};
+  }
 `
 
 export const HeaderWrapper = styled.div`

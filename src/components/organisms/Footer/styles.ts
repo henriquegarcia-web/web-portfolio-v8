@@ -13,6 +13,11 @@ export const FooterWrapper = styled.footer`
   justify-content: space-between;
   width: 100%;
   max-width: ${({ theme }) => theme.sizes.container.lg};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    flex-wrap: wrap;
+    gap: ${({ theme }) => theme.spacing[8]};
+  }
 `
 
 export const MainFooter = styled.div`
@@ -27,7 +32,12 @@ export const FooterColumn = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-width: 12rem;
   gap: ${({ theme }) => theme.spacing[4]};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    flex-basis: 100%;
+  }
 `
 
 export const BottomFooter = styled.div`
@@ -37,4 +47,11 @@ export const BottomFooter = styled.div`
   padding: ${({ theme }) => theme.spacing[3]} ${({ theme }) => theme.spacing[4]};
 
   background-color: ${({ theme }) => theme.colors.neutral.darkest};
+
+  ${FooterWrapper} {
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+      flex-direction: column;
+      gap: ${({ theme }) => theme.spacing[1]};
+    }
+  }
 `
