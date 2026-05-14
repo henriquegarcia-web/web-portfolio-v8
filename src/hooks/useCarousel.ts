@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import type { PointerEvent } from 'react'
 
 interface IUseCarousel<T> {
   items: T[]
@@ -69,6 +70,9 @@ export const useCarousel = <T>({
 }: IUseCarousel<T>) => {
   const [currentIndex, setCurrentIndex] = useState(itemsPerView)
   const [enableTransition, setEnableTransition] = useState(true)
+  const [dragStartX, setDragStartX] = useState<number | null>(null)
+  const [dragOffset, setDragOffset] = useState(0)
+  const [isDragging, setIsDragging] = useState(false)
 
   const carouselItems = useMemo(() => {
     if (!loop || items.length === 0) return items
@@ -92,6 +96,63 @@ export const useCarousel = <T>({
     setEnableTransition(true)
     setCurrentIndex((prev) => prev - 1)
   }, [])
+
+  const resetDrag = useCallback(() => {
+    setDragStartX(null)
+    setDragOffset(0)
+    setIsDragging(false)
+  }, [])
+
+  const handlePointerDown = useCallback((event: PointerEvent<HTMLElement>) => {
+    if (event.button !== 0) return
+
+    event.currentTarget.setPointerCapture(event.pointerId)
+    setEnableTransition(false)
+    setDragStartX(event.clientX)
+    setDragOffset(0)
+    setIsDragging(true)
+  }, [])
+
+  const handlePointerMove = useCallback(
+    (event: PointerEvent<HTMLElement>) => {
+      if (dragStartX === null) return
+
+      setDragOffset(event.clientX - dragStartX)
+    },
+    [dragStartX],
+  )
+
+  const handlePointerEnd = useCallback(
+    (event: PointerEvent<HTMLElement>) => {
+      if (dragStartX === null) return
+
+      const dragDistance = event.clientX - dragStartX
+      const dragThreshold = Math.min(
+        80,
+        Math.max(32, event.currentTarget.clientWidth * 0.08),
+      )
+
+      resetDrag()
+
+      if (Math.abs(dragDistance) < dragThreshold) {
+        setEnableTransition(true)
+        return
+      }
+
+      if (dragDistance < 0) {
+        next()
+        return
+      }
+
+      prev()
+    },
+    [dragStartX, next, prev, resetDrag],
+  )
+
+  const handlePointerCancel = useCallback(() => {
+    resetDrag()
+    setEnableTransition(true)
+  }, [resetDrag])
 
   const handleTransitionEnd = useCallback(() => {
     if (!loop) return
@@ -127,9 +188,18 @@ export const useCarousel = <T>({
     currentIndex,
     itemWidth,
     translateX,
+    dragOffset,
     enableTransition,
+    isDragging,
     next,
     prev,
     handleTransitionEnd,
+    dragHandlers: {
+      onPointerDown: handlePointerDown,
+      onPointerMove: handlePointerMove,
+      onPointerUp: handlePointerEnd,
+      onPointerCancel: handlePointerCancel,
+      onPointerLeave: handlePointerEnd,
+    },
   }
 }

@@ -2,7 +2,9 @@ import styled from 'styled-components'
 
 interface ICarouselTrack {
   $translateX: number
+  $dragOffset: number
   $enableTransition: boolean
+  $isDragging: boolean
 }
 
 interface ICarouselItem {
@@ -23,13 +25,19 @@ export const ServicesCarousel = styled.div`
 export const CarouselViewport = styled.div`
   width: 100%;
   overflow: hidden;
+  touch-action: pan-y;
 `
 
 export const CarouselTrack = styled.div<ICarouselTrack>`
   display: flex;
-  transform: translateX(${({ $translateX }) => $translateX}%);
-  transition: ${({ $enableTransition }) =>
-    $enableTransition ? 'transform 0.45s ease' : 'none'};
+  cursor: ${({ $isDragging }) => ($isDragging ? 'grabbing' : 'grab')};
+  transform: translateX(
+    calc(${({ $translateX }) => $translateX}% + ${({ $dragOffset }) => $dragOffset}px)
+  );
+  transition: ${({ $enableTransition, $isDragging }) =>
+    $enableTransition && !$isDragging ? 'transform 0.45s ease' : 'none'};
+  user-select: none;
+  will-change: transform;
 `
 
 export const CarouselItem = styled.div<ICarouselItem>`

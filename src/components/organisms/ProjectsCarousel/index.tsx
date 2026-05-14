@@ -20,10 +20,13 @@ const ProjectsCarousel = () => {
     carouselItems,
     itemWidth,
     translateX,
+    dragOffset,
     enableTransition,
+    isDragging,
     next,
     prev,
     handleTransitionEnd,
+    dragHandlers,
   } = useCarousel({
     items: projects,
     itemsPerView,
@@ -35,8 +38,11 @@ const ProjectsCarousel = () => {
       <S.CarouselViewport>
         <S.CarouselTrack
           $translateX={translateX}
+          $dragOffset={dragOffset}
           $enableTransition={enableTransition}
+          $isDragging={isDragging}
           onTransitionEnd={handleTransitionEnd}
+          {...dragHandlers}
         >
           {carouselItems.map((project, index) => (
             <S.CarouselItem

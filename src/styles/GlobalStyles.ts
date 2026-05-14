@@ -1,11 +1,12 @@
-import { createGlobalStyle, css } from 'styled-components';
-import { createCssVariables } from './createCssVariables';
+import { createGlobalStyle, css } from 'styled-components'
+import { createCssVariables } from './createCssVariables'
 
 const rootVariables = css`
   :root {
-    ${({ theme }) => createCssVariables(theme as unknown as Record<string, unknown>)};
+    ${({ theme }) =>
+      createCssVariables(theme as unknown as Record<string, unknown>)};
   }
-`;
+`
 
 export const GlobalStyles = createGlobalStyle`
   ${rootVariables}
@@ -14,6 +15,7 @@ export const GlobalStyles = createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
+    user-select: none;
   }
 
   html {
@@ -93,4 +95,4 @@ export const GlobalStyles = createGlobalStyle`
       scroll-behavior: auto !important;
     }
   }
-`;
+`

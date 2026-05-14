@@ -20,10 +20,13 @@ const ServicesCarousel = () => {
     carouselItems,
     itemWidth,
     translateX,
+    dragOffset,
     enableTransition,
+    isDragging,
     next,
     prev,
     handleTransitionEnd,
+    dragHandlers,
   } = useCarousel({
     items: services,
     itemsPerView,
@@ -35,8 +38,11 @@ const ServicesCarousel = () => {
       <S.CarouselViewport>
         <S.CarouselTrack
           $translateX={translateX}
+          $dragOffset={dragOffset}
           $enableTransition={enableTransition}
+          $isDragging={isDragging}
           onTransitionEnd={handleTransitionEnd}
+          {...dragHandlers}
         >
           {carouselItems.map((service, index) => (
             <S.CarouselItem
