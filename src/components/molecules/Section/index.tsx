@@ -1,5 +1,6 @@
 // ================== IMPORTS
 
+import { useEffect, useRef } from 'react'
 import * as S from './styles'
 
 import type { ILandingSection } from '@/constants/landingSections'
@@ -15,9 +16,31 @@ interface ISection {
 const Section = ({ section }: ISection) => {
   const { id, Component, background } = section
 
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+
   const isColor = background.type === 'color'
   const isImage = background.type === 'image'
   const isVideo = background.type === 'video'
+
+  useEffect(() => {
+    if (!isVideo) return
+
+    const handleLoad = () => {
+      setTimeout(() => {
+        videoRef?.current?.play().catch(() => {})
+      }, 200)
+    }
+
+    if (document.readyState === 'complete') {
+      handleLoad()
+    } else {
+      window.addEventListener('load', handleLoad)
+
+      return () => {
+        window.removeEventListener('load', handleLoad)
+      }
+    }
+  }, [isVideo])
 
   return (
     <S.Section id={id}>
@@ -31,12 +54,12 @@ const Section = ({ section }: ISection) => {
       >
         {isVideo && (
           <S.BackgroundVideo
-            autoPlay
+            ref={videoRef}
+            // autoPlay
             muted
             loop
-            poster={''}
+            poster={'/hero_bg_poster.png'}
             playsInline
-            preload="none"
             aria-hidden
             disablePictureInPicture
           >
