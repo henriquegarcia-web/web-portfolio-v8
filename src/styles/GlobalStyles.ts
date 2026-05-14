@@ -18,6 +18,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
     font-size: 16px;
     scroll-behavior: smooth;
     scroll-padding-top: ${({ theme }) => theme.sizes.header.desktop};
@@ -29,7 +32,9 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     margin: 0;
-    min-width: 20rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
     background-color: var(--colors-background-canvas);
     color: var(--colors-text-primary);
     font-family: var(--typography-families-body);
@@ -41,7 +46,18 @@ export const GlobalStyles = createGlobalStyle`
 
   body,
   #root {
+    width: 100%;
+    max-width: 100%;
     min-height: 100dvh;
+    overflow-x: clip;
+  }
+
+  @supports not (overflow: clip) {
+    html,
+    body,
+    #root {
+      overflow-x: hidden;
+    }
   }
 
   img,

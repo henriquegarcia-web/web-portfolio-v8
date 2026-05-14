@@ -31,8 +31,8 @@ const Image = ({
     <S.Image
       src={src}
       alt={alt}
-      width={width}
-      height={height}
+      $width={width}
+      $height={height}
       loading={loading}
       decoding={decoding}
       {...props}

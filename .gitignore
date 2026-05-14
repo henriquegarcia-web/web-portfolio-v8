@@ -11,3 +11,5 @@ vite.config.js
 .env
 .env.*
 !.env.example
+.chrome-overflow-check
+.edge-overflow-check

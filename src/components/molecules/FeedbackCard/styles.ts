@@ -25,13 +25,16 @@ export const FeedbackDetailsWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing[2]};
+  margin-top: auto;
 `
 
 export const FeedbackProfilePicture = styled.div`
   width: 40px;
   height: 40px;
-  border-radius: ${({ theme }) => theme.radii.round};
-  overflow: hidden;
+  /* border-radius: ${({ theme }) => theme.radii.round}; */
+  /* overflow: hidden; */
 `
 
-export const FeedbackDetails = styled.div``
+export const FeedbackDetails = styled.div`
+  /* width: ; */
+`

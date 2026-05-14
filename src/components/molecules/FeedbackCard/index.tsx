@@ -31,8 +31,8 @@ const FeedbackCard = ({ feedback }: IFeedbackCard) => {
           <Image
             src={feedback.profilePicture}
             alt=""
-            width={50}
-            height={50}
+            width={40}
+            height={40}
             aria-hidden
           />
         </S.FeedbackProfilePicture>

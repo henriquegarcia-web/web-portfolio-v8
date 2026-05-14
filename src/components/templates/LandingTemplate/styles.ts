@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const LandingTemplate = styled.div`
+export const LandingTemplate = styled.main`
   display: flex;
   flex-direction: column;
 `
