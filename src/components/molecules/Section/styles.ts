@@ -9,15 +9,20 @@ interface ISectionBackground {
   $background?: string
 }
 
-export const Section = styled.section`
+export const Section = styled.div`
   position: relative;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-inline: ${({ theme }) => theme.spacing[4]};
 
   width: 100%;
   overflow: hidden;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid ${({ theme }) => theme.colors.border.subtle};
+  }
 `
 
 export const SectionWrapper = styled.div`

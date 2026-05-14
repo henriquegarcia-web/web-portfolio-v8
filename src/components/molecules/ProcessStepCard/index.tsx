@@ -11,27 +11,39 @@ import { useAppTranslation } from '@/hooks/useAppTranslation'
 interface IProcessStepCard {
   position: number
   process: IProcess
+  nextColor?: string
 }
 
 // ================== COMPONENT
 
-const ProcessStepCard = ({ position, process }: IProcessStepCard) => {
+const ProcessStepCard = ({
+  position,
+  process,
+  nextColor,
+}: IProcessStepCard) => {
   const { t } = useAppTranslation()
+
+  const processGradient = `linear-gradient(90deg, ${process.color}, ${
+    nextColor ?? 'transparent'
+  })`
 
   return (
     <S.ProcessStepCard>
       <S.ProcessStepIconWrapper>
-        <S.ProcessStepIcon>{process.icon}</S.ProcessStepIcon>
+        <S.ProcessStepIcon $color={process.color}>
+          {process.icon}
+        </S.ProcessStepIcon>
+        <S.ProcessStepBar $color={process.color} $gradient={processGradient} />
       </S.ProcessStepIconWrapper>
       <S.ProcessStepDetails>
         <StepNumber step={position} decimal={2} />
+        <Typography variant="subtitle" as="p">
+          {t(`components.processes.${process.id}.title`)}
+        </Typography>
+        <Typography variant="caption" as="p">
+          {t(`components.processes.${process.id}.description`)}
+        </Typography>
       </S.ProcessStepDetails>
-      <Typography variant="text" as="p">
-        {t(`components.processes.${process.id}.title`)}
-      </Typography>
-      <Typography variant="text" as="p">
-        {t(`components.processes.${process.id}.description`)}
-      </Typography>
     </S.ProcessStepCard>
   )
 }

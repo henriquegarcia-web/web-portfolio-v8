@@ -19,10 +19,10 @@ const Indicator = ({ indicator }: IIndicator) => {
 
   return (
     <S.Indicator>
-      <Typography variant="text" as="p">
+      <Typography variant="title" as="p" highlight={indicator.value}>
         {indicator.value}
       </Typography>
-      <Typography variant="text" as="p">
+      <Typography variant="text" as="p" uppercase>
         {t(`components.indicators.${indicator.id}`)}
       </Typography>
     </S.Indicator>

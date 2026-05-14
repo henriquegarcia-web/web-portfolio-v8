@@ -5,12 +5,14 @@ export const typography = {
     mono: "'Fira Code', 'Courier New', monospace",
   },
   fontWeights: {
+    tiny: 300,
     regular: 400,
     medium: 500,
     semibold: 600,
     bold: 700,
   },
   fontSizes: {
+    '2xs': '0.63rem', // 10px
     xs: '0.75rem', // 12px
     sm: '0.875rem', // 14px
     base: '1rem', // 16px

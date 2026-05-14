@@ -14,6 +14,8 @@ export type TypographyVariant =
   | 'button'
   | 'link'
   | 'nav'
+  | 'tag'
+  | 'step'
 
 export interface ITypography {
   children: React.ReactNode
@@ -27,10 +29,15 @@ export interface ITypography {
 
 // ================== UTILS
 
+const escapeRegex = (value: string) => {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
 const renderHighlightedText = (text: string, highlight: string) => {
   if (!highlight.trim()) return text
 
-  const regex = new RegExp(`(${highlight})`, 'gi')
+  const escapedHighlight = escapeRegex(highlight)
+  const regex = new RegExp(`(${escapedHighlight})`, 'gi')
   const parts = text.split(regex)
 
   return parts.map((part, index) => {
@@ -51,7 +58,7 @@ const Typography = ({
   className,
   active = false,
   highlight,
-  uppercase = false
+  uppercase = false,
 }: ITypography) => {
   const content =
     typeof children === 'string' && highlight

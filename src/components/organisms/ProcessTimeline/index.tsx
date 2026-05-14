@@ -11,7 +11,12 @@ const ProcessTimeline = () => {
   return (
     <S.ProcessTimeline>
       {processes.map((process, index) => (
-        <ProcessStepCard key={process.id} position={index} process={process} />
+        <ProcessStepCard
+          key={process.id}
+          position={index + 1}
+          process={process}
+          nextColor={processes[index + 1]?.color}
+        />
       ))}
     </S.ProcessTimeline>
   )

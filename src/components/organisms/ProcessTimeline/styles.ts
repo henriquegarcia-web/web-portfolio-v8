@@ -1,3 +1,5 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-export const ProcessTimeline = styled.section``;
+export const ProcessTimeline = styled.section`
+  display: flex;
+`

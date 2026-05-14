@@ -23,7 +23,7 @@ const FeedbackCard = ({ feedback }: IFeedbackCard) => {
       <S.FeedbackCardIcon>
         <FaQuoteLeft />
       </S.FeedbackCardIcon>
-      <Typography variant="text" as="p">
+      <Typography variant="caption" as="p">
         {t(`components.feedbacks.${feedback.id}.message`)}
       </Typography>
       <S.FeedbackDetailsWrapper>
@@ -31,10 +31,14 @@ const FeedbackCard = ({ feedback }: IFeedbackCard) => {
           <Image src={feedback.profilePicture} alt="" width={50} height={50} />
         </S.FeedbackProfilePicture>
         <S.FeedbackDetails>
-          <Typography variant="text" as="p">
-            {t(`components.feedbacks.${feedback.id}.name`)}
+          <Typography variant="caption" as="p">
+            {feedback.name}
           </Typography>
-          <Typography variant="text" as="p">
+          <Typography
+            variant="caption"
+            as="p"
+            highlight={t(`components.feedbacks.${feedback.id}.role`)}
+          >
             {t(`components.feedbacks.${feedback.id}.role`)}
           </Typography>
         </S.FeedbackDetails>

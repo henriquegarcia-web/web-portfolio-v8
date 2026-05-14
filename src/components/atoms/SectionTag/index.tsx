@@ -2,6 +2,8 @@
 
 import * as S from './styles'
 
+import { Typography } from '@/components/atoms'
+
 // ================== COMPONENT TYPES
 
 interface ISectionTag {
@@ -14,7 +16,9 @@ const SectionTag = ({ children }: ISectionTag) => {
   return (
     <S.SectionTag>
       <S.SectionTagDot />
-      {children}
+      <Typography variant="tag" as="p">
+        {children}
+      </Typography>
     </S.SectionTag>
   )
 }

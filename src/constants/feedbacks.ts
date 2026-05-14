@@ -1,19 +1,23 @@
 export interface IFeedback {
   id: string
+  name: string
   profilePicture: string
 }
 
 export const feedbacks = [
   {
     id: 'feedback1',
-    profilePicture: '/feedbacks/profile_1.png',
+    name: 'Juliana Carvalho',
+    profilePicture: '/profiles/profile_1.png',
   },
   {
     id: 'feedback2',
-    profilePicture: '/feedbacks/profile_2.png',
+    name: 'Rafael Mendes',
+    profilePicture: '/profiles/profile_2.png',
   },
   {
     id: 'feedback3',
-    profilePicture: '/feedbacks/profile_3.png',
+    name: 'Camila Vieira',
+    profilePicture: '/profiles/profile_3.png',
   },
 ] satisfies IFeedback[]

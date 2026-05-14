@@ -1,7 +1,7 @@
 // ================== IMPORTS
 
 import * as S from './styles'
-import { FaLocationArrow } from 'react-icons/fa'
+import { RiArrowRightUpLine } from 'react-icons/ri'
 
 import { Button, Typography } from '@/components/atoms'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
@@ -13,15 +13,22 @@ const CtaSection = () => {
 
   return (
     <S.CtaSection>
-      <Typography variant="text" as="p">
-        {t('sections.cta.headline')}
-      </Typography>
-      <Typography variant="text" as="p">
-        {t('sections.cta.legend')}
-      </Typography>
-      <Button icon={<FaLocationArrow />} iconPosition="right" variant="primary">
-        {t('sections.cta.ctaContact')}
-      </Button>
+      <S.CtaSectionContent>
+        <Typography variant="title" as="p">
+          {t('sections.cta.headline')}
+        </Typography>
+        {/* <Typography variant="text" as="p">
+          {t('sections.cta.legend')}
+        </Typography> */}
+        <Button
+          icon={<RiArrowRightUpLine />}
+          iconPosition="right"
+          variant="primary"
+        >
+          {t('sections.cta.ctaContact')}
+        </Button>
+      </S.CtaSectionContent>
+      <S.CtaSectionBanner />
     </S.CtaSection>
   )
 }

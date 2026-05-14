@@ -2,8 +2,8 @@
 
 import * as S from './styles'
 
-import { SectionTag, Typography } from '@/components/atoms'
-import { Indicators } from '@/components/molecules'
+import { Typography } from '@/components/atoms'
+import { Indicators, SectionHeader } from '@/components/molecules'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
 
 // ================== COMPONENT
@@ -14,10 +14,11 @@ const AboutSection = () => {
   return (
     <S.AboutSection>
       <S.AboutSectionLeft>
-        <SectionTag>{t('sections.sobre.label')}</SectionTag>
-        <Typography variant="text" as="p">
-          {t('sections.sobre.headline')}
-        </Typography>
+        <SectionHeader
+          label={t('sections.sobre.label')}
+          headline={t('sections.sobre.headline')}
+          highlight={t('sections.sobre.headlineFocus')}
+        />
         <Typography variant="text" as="p">
           {t('sections.sobre.about')}
         </Typography>

@@ -1,7 +1,7 @@
 // ================== IMPORTS
 
 import * as S from './styles'
-import { FaLocationArrow } from 'react-icons/fa'
+import { RiArrowRightUpLine } from 'react-icons/ri'
 
 import { Button, SectionTag, Typography } from '@/components/atoms'
 
@@ -10,6 +10,7 @@ import { Button, SectionTag, Typography } from '@/components/atoms'
 interface ISectionHeader {
   label: string
   headline: string
+  highlight?: string
   cta?: {
     label: string
     path: string
@@ -18,24 +19,27 @@ interface ISectionHeader {
 
 // ================== COMPONENT
 
-const SectionHeader = ({ label, headline, cta }: ISectionHeader) => {
+const SectionHeader = ({ label, headline, highlight, cta }: ISectionHeader) => {
   return (
     <S.SectionHeader>
       <SectionTag>{label}</SectionTag>
-      <Typography variant="text" as="p">
+      <Typography variant="title" as="h2" highlight={highlight}>
         {headline}
       </Typography>
-      {cta && (
-        <Button
-          icon={<FaLocationArrow />}
-          iconPosition="right"
-          variant="secondary"
-          type="link"
-          path={cta.path}
-        >
-          {cta.label}
-        </Button>
-      )}
+
+      <S.SectionHeaderCta>
+        {cta && (
+          <Button
+            icon={<RiArrowRightUpLine />}
+            iconPosition="right"
+            variant="secondary"
+            type="link"
+            path={cta.path}
+          >
+            {cta.label}
+          </Button>
+        )}
+      </S.SectionHeaderCta>
     </S.SectionHeader>
   )
 }

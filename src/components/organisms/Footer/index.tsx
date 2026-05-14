@@ -1,7 +1,7 @@
 // ================== IMPORTS
 
 import * as S from './styles'
-import { FaLocationArrow } from 'react-icons/fa'
+import { RiArrowRightUpLine } from 'react-icons/ri'
 
 import { Button, Logo, Typography } from '@/components/atoms'
 import { FooterList, SocialLinksRow } from '@/components/molecules'
@@ -37,37 +37,42 @@ const Footer = () => {
   return (
     <S.Footer>
       <S.MainFooter>
-        <S.FooterColumn>
-          <Logo />
-          <Typography variant="text" as="p">
-            {t('sections.footer.headline')}
-          </Typography>
-          <SocialLinksRow />
-        </S.FooterColumn>
-        <S.FooterColumn>
-          <FooterList title="Navegação" items={navigationItems} />
-        </S.FooterColumn>
-        <S.FooterColumn>
-          <FooterList title="Tecnologias" items={techItems} />
-        </S.FooterColumn>
-        <S.FooterColumn>
-          <FooterList title="Vamos conversar" items={contactItems} />
-          <Button
-            icon={<FaLocationArrow />}
-            iconPosition="right"
-            variant="secondary"
-          >
-            {t('sections.cta.ctaContact')}
-          </Button>
-        </S.FooterColumn>
+        <S.FooterWrapper>
+          <S.FooterColumn>
+            <Logo />
+            <Typography variant="text" as="p">
+              {t('sections.footer.headline')}
+            </Typography>
+            <SocialLinksRow />
+          </S.FooterColumn>
+          <S.FooterColumn>
+            <FooterList title="Navegação" items={navigationItems} />
+          </S.FooterColumn>
+          <S.FooterColumn>
+            <FooterList title="Tecnologias" items={techItems} />
+          </S.FooterColumn>
+          <S.FooterColumn>
+            <FooterList title="Vamos conversar" items={contactItems} />
+            <Button
+              icon={<RiArrowRightUpLine />}
+              iconPosition="right"
+              variant="secondary"
+            >
+              {t('sections.cta.ctaContact')}
+            </Button>
+          </S.FooterColumn>
+        </S.FooterWrapper>
       </S.MainFooter>
+
       <S.BottomFooter>
-        <Typography variant="text" as="p">
-          {t('sections.footer.rights')}
-        </Typography>
-        <Typography variant="text" as="p">
-          {t('sections.footer.madeBy')}
-        </Typography>
+        <S.FooterWrapper>
+          <Typography variant="caption" as="p">
+            {t('sections.footer.rights')}
+          </Typography>
+          <Typography variant="caption" as="p">
+            {t('sections.footer.madeBy')}
+          </Typography>
+        </S.FooterWrapper>
       </S.BottomFooter>
     </S.Footer>
   )

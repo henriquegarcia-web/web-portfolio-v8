@@ -1,3 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-export const SocialLinksRow = styled.nav``;
+export const SocialLinksRow = styled.nav`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing[4]};
+`

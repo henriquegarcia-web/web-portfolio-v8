@@ -19,11 +19,11 @@ const ServiceCard = ({ service }: IServiceCard) => {
 
   return (
     <S.ServiceCard>
-      <Image src={service.icon} alt="" width={40} height={40} />
-      <Typography variant="text" as="p">
+      <Image src={service.icon} alt="" width={60} height={60} />
+      <Typography variant="subtitle" as="h3">
         {t(`components.services.${service.id}.title`)}
       </Typography>
-      <Typography variant="text" as="p">
+      <Typography variant="caption" as="p">
         {t(`components.services.${service.id}.legend`)}
       </Typography>
     </S.ServiceCard>

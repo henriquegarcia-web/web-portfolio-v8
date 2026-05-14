@@ -12,7 +12,7 @@
     "sobre": {
       "nav": "Sobre",
       "label": "Sobre Mim",
-      "headline": "Mais que código. Eu crio soluções.",
+      "headline": "Mais que código. \n Eu crio soluções.",
       "headlineFocus": "soluções",
       "about": "Acredito que tecnologia de verdade não é só sobre código limpo, mas sobre entender problemas profundos e entregar soluções simples, escaláveis e que realmente fazem a diferença."
     },
@@ -24,7 +24,8 @@
     "projetos": {
       "nav": "Projetos",
       "label": "Projetos em destaque",
-      "headline": "Alguns resultados que entreguei"
+      "headline": "Alguns resultados que entreguei",
+      "cta": "Ver todos os projetos"
     },
     "feedback": {
       "nav": "Feedbacks",
@@ -65,15 +66,15 @@
     },
     "services": {
       "web-mobile": {
-        "title": "Desenvolvimento Web & Mobile",
+        "title": "Web & Mobile",
         "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
       },
       "custom-systems": {
-        "title": "Sistemas Personalizados",
+        "title": "Sistemas Sob Demanda",
         "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
       },
       "automations": {
-        "title": "Automação & Integrações",
+        "title": "Automações com IA",
         "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
       },
       "api": {
@@ -109,19 +110,16 @@
     },
     "feedbacks": {
       "feedback1": {
-        "name": "Juliana Carvalho",
         "role": "CEO",
-        "message": ""
+        "message": "Labore voluptate quo repudiandae iusto animi repellat quod nemo sit hic dolores natus velit."
       },
       "feedback2": {
-        "name": "Rafael Mendes",
         "role": "Empreendedor",
-        "message": ""
+        "message": "Labore voluptate quo repudiandae iusto animi repellat quod nemo sit hic dolores natus velit."
       },
       "feedback3": {
-        "name": "Camila Vieira",
         "role": "Empreendedora",
-        "message": ""
+        "message": "Labore voluptate quo repudiandae iusto animi repellat quod nemo sit hic dolores natus velit."
       }
     },
     "processes": {

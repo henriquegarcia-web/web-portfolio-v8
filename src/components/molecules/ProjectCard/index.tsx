@@ -5,6 +5,7 @@ import * as S from './styles'
 import { Image, Tag, Typography } from '@/components/atoms'
 import type { IProject } from '@/constants/projects'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
+import { useEffect, useState } from 'react'
 
 // ================== COMPONENT TYPES
 
@@ -14,45 +15,84 @@ interface IProjectCard {
 
 // ================== COMPONENT
 
+const IMAGE_INTERVAL = 1500
+
 const ProjectCard = ({ project }: IProjectCard) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isHovering, setIsHovering] = useState(false)
+
   const { t } = useAppTranslation()
 
   const projectData = {
-    images: project.images[0],
+    images: project.images,
     title: t(`components.projects.${project.id}.title`),
     tag: t(`components.projects.${project.id}.tag`),
     description: t(`components.projects.${project.id}.description`),
     techs: project.technologies,
   }
 
+  useEffect(() => {
+    if (!isHovering || projectData.images.length <= 1) return
+
+    const interval = window.setInterval(() => {
+      setCurrentImageIndex((prev) =>
+        prev === projectData.images.length - 1 ? 0 : prev + 1,
+      )
+    }, IMAGE_INTERVAL)
+
+    return () => window.clearInterval(interval)
+  }, [isHovering, projectData.images.length])
+
+  const handleMouseEnter = () => {
+    setIsHovering(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsHovering(false)
+    setCurrentImageIndex(0)
+  }
+
   return (
-    <S.ProjectCard>
+    <S.ProjectCard
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <S.ProjectImage>
-        <Image
-          src={projectData.images}
-          alt={`Projeto ${project.id}`}
-          width={500}
-          height={300}
-        />
+        <S.ProjectImageTrack $currentImageIndex={currentImageIndex}>
+          {projectData.images.map((image, index) => (
+            <S.ProjectImageItem key={`${project.id}-image-${index}`}>
+              <Image
+                src={image}
+                alt={`Projeto ${project.id} - imagem ${index + 1}`}
+                width={500}
+                height={300}
+              />
+            </S.ProjectImageItem>
+          ))}
+        </S.ProjectImageTrack>
+
         <S.ProjectTag>
           <Tag variant="default">{projectData.tag}</Tag>
         </S.ProjectTag>
       </S.ProjectImage>
 
-      <Typography variant="text" as="p">
-        {projectData.tag}
-      </Typography>
-      <Typography variant="text" as="p">
-        {projectData.tag}
-      </Typography>
+      <S.ProjectContent>
+        <Typography variant="subtitle" as="p">
+          {projectData.title}
+        </Typography>
 
-      <S.ProjectTagsWrapper>
-        {projectData.techs.map((tech) => (
-          <Tag key={`tag-tech-${project.id}-${tech}`} variant="default">
-            {tech}
-          </Tag>
-        ))}
-      </S.ProjectTagsWrapper>
+        <Typography variant="caption" as="p">
+          {projectData.description}
+        </Typography>
+
+        {/* <S.ProjectTagsWrapper>
+          {projectData.techs.slice(0, 3).map((tech) => (
+            <Tag key={`tag-tech-${project.id}-${tech}`} variant="tech">
+              {tech}
+            </Tag>
+          ))}
+        </S.ProjectTagsWrapper> */}
+      </S.ProjectContent>
     </S.ProjectCard>
   )
 }

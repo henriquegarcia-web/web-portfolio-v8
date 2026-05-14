@@ -27,9 +27,9 @@ const variants = {
 
   subtitle: css`
     font-family: ${({ theme }) => theme.typography.families.heading};
-    font-size: ${({ theme }) => theme.typography.fontSizes['2xl']};
+    font-size: ${({ theme }) => theme.typography.fontSizes.base};
     font-weight: ${({ theme }) => theme.typography.fontWeights.semibold};
-    line-height: ${({ theme }) => theme.typography.lineHeights.normal};
+    line-height: ${({ theme }) => theme.typography.lineHeights.tight};
     letter-spacing: ${({ theme }) => theme.typography.letterSpacings.normal};
   `,
 
@@ -61,8 +61,8 @@ const variants = {
 
   caption: css`
     font-family: ${({ theme }) => theme.typography.families.body};
-    font-size: ${({ theme }) => theme.typography.fontSizes.sm};
-    font-weight: ${({ theme }) => theme.typography.fontWeights.medium};
+    font-size: ${({ theme }) => theme.typography.fontSizes.xs};
+    font-weight: ${({ theme }) => theme.typography.fontWeights.tiny};
     line-height: ${({ theme }) => theme.typography.lineHeights.normal};
     letter-spacing: ${({ theme }) => theme.typography.letterSpacings.wide};
     opacity: 0.8;
@@ -79,6 +79,8 @@ const variants = {
     letter-spacing: ${({ theme }) => theme.typography.letterSpacings.wide};
     text-transform: uppercase;
     text-decoration: none;
+
+    white-space: nowrap !important;
 
     color: inherit;
   `,
@@ -117,6 +119,24 @@ const variants = {
       color: ${({ theme }) => theme.colors.neutral.soft};
     }
   `,
+
+  tag: css`
+    font-family: ${({ theme }) => theme.typography.families.body};
+    font-size: ${({ theme }) => theme.typography.fontSizes['2xs']};
+    font-weight: ${({ theme }) => theme.typography.fontWeights.regular};
+    line-height: ${({ theme }) => theme.typography.lineHeights.relaxed};
+    letter-spacing: ${({ theme }) => theme.typography.letterSpacings.normal};
+  `,
+
+  step: css`
+    font-family: ${({ theme }) => theme.typography.families.body};
+    font-size: ${({ theme }) => theme.typography.fontSizes.xs};
+    font-weight: ${({ theme }) => theme.typography.fontWeights.regular};
+    line-height: ${({ theme }) => theme.typography.lineHeights.snug};
+    letter-spacing: ${({ theme }) => theme.typography.letterSpacings.normal};
+
+    opacity: 0.5;
+  `,
 }
 
 export const Highlight = styled.span`
@@ -132,6 +152,7 @@ export const Typography = styled.p<ITypographyStyleProps>`
   margin: 0;
   padding: 0;
   color: inherit;
+  white-space: pre-line;
 
   ${({ $variant }) => variants[$variant]}
   ${({ $uppercase }) =>

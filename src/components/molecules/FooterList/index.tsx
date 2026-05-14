@@ -22,9 +22,12 @@ interface IFooterList {
 const FooterList = ({ title, items }: IFooterList) => {
   return (
     <S.FooterList>
-      <Typography variant="text" as="p">
+      <S.FooterListTitle>
+
+      <Typography variant="subtitle" as="p" highlight={title}>
         {title}
       </Typography>
+      </S.FooterListTitle>
       {items.map((item) => {
         if (!!item.path && item.path !== '')
           return (

@@ -18,8 +18,8 @@ const ProjectsSection = () => {
           label={t('sections.projetos.label')}
           headline={t('sections.projetos.headline')}
           cta={{
-            label: 'Ver todos os projetos',
-            path: '/servicos',
+            label: t('sections.projetos.cta'),
+            path: '/projetos',
           }}
         />
       </S.ProjectsSectionLeft>
