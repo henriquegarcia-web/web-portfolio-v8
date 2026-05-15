@@ -3,9 +3,11 @@
 import * as S from './styles'
 import { RiArrowRightUpLine } from 'react-icons/ri'
 
-import { Button, Logo } from '@/components/atoms'
-import { LanguageSelector, Navigator } from '@/components/molecules'
-import { MobileMenu } from '@/components/organisms'
+import Button from '@/components/atoms/Button'
+import Logo from '@/components/atoms/Logo'
+import LanguageSelector from '@/components/molecules/LanguageSelector'
+import MobileMenu from '@/components/organisms/MobileMenu'
+import Navigator from '@/components/molecules/Navigator'
 import { WHATSAPP_HREF } from '@/constants/site'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
 

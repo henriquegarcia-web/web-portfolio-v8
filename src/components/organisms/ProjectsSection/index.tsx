@@ -3,7 +3,7 @@
 import * as S from './styles'
 
 import { SectionHeader } from '@/components/molecules'
-import { ProjectsCarousel } from '@/components/organisms'
+import ProjectsCarousel from '@/components/organisms/ProjectsCarousel'
 import { PROJECTS_HREF } from '@/constants/site'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
 

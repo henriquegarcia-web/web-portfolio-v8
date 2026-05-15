@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 
 import * as S from './styles'
 
-import { NavLink } from '@/components/atoms'
+import NavLink from '@/components/atoms/NavLink'
 import { landingSections } from '@/constants/landingSections'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
 

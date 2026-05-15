@@ -1,7 +1,7 @@
 // ================== IMPORTS
 
-import { Section } from '@/components/molecules'
-import { LandingTemplate } from '@/components/templates'
+import Section from '@/components/molecules/Section'
+import LandingTemplate from '@/components/templates/LandingTemplate'
 import { landingSections } from '@/constants/landingSections'
 
 // ================== UTILS

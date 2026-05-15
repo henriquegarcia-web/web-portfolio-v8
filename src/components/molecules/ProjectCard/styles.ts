@@ -1,9 +1,5 @@
 import styled from 'styled-components'
 
-interface IProjectImageTrack {
-  $currentImageIndex: number
-}
-
 export const ProjectCard = styled.article`
   display: flex;
   flex-direction: column;
@@ -21,24 +17,6 @@ export const ProjectImage = styled.div`
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
-`
-
-export const ProjectImageTrack = styled.div<IProjectImageTrack>`
-  display: flex;
-  width: 100%;
-  height: 100%;
-
-  transform: translateX(
-    ${({ $currentImageIndex }) => `-${$currentImageIndex * 100}%`}
-  );
-
-  transition: transform 0.6s ease;
-`
-
-export const ProjectImageItem = styled.div`
-  flex: 0 0 100%;
-  width: 100%;
-  height: 100%;
 
   img {
     width: 100%;

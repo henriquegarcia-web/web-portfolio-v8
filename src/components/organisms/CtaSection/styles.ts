@@ -38,7 +38,7 @@ export const CtaSectionBanner = styled.div`
   width: 100%;
   height: 100%;
 
-  background-image: url('/cta_banner.png');
+  background-image: url('/optimized/cta_banner-1280.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

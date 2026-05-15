@@ -1,6 +1,6 @@
 // ================== IMPORTS
 
-import { Image } from '@/components/atoms'
+import Image from '@/components/atoms/Image'
 
 import type { SizeTypes } from '@/types/styles'
 

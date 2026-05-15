@@ -14,3 +14,10 @@ export const LandingContent = styled.div`
     padding-top: ${({ theme }) => theme.sizes.header.mobile};
   }
 `
+
+export const FooterBoundary = styled.div`
+  min-height: 24rem;
+
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 24rem;
+`

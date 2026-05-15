@@ -3,7 +3,8 @@
 import * as S from './styles'
 import { RiArrowRightUpLine } from 'react-icons/ri'
 
-import { Button, Typography } from '@/components/atoms'
+import Button from '@/components/atoms/Button'
+import Typography from '@/components/atoms/Typography'
 import { PROJECTS_HREF, WHATSAPP_HREF } from '@/constants/site'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
 

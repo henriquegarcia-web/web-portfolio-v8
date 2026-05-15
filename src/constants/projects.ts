@@ -110,7 +110,13 @@ export const projects = [
       '/projects/7/5.png',
       '/projects/7/6.png',
     ],
-    technologies: ['React Native', 'TypeScript', 'Redux', 'Firebase', 'WebSockets'],
+    technologies: [
+      'React Native',
+      'TypeScript',
+      'Redux',
+      'Firebase',
+      'WebSockets',
+    ],
   },
   {
     id: 'portfolio-pessoal',
@@ -194,7 +200,13 @@ export const projects = [
       '/projects/13/5.png',
       '/projects/13/6.png',
     ],
-    technologies: ['React', 'JavaScript', 'Node.js', 'Express.js', 'PostgreSQL'],
+    technologies: [
+      'React',
+      'JavaScript',
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+    ],
   },
   {
     id: 'sistema-tickets',
@@ -217,6 +229,12 @@ export const projects = [
       '/projects/15/4.png',
       '/projects/15/5.png',
     ],
-    technologies: ['React', 'TypeScript', 'Node.js', 'Express.js', 'PostgreSQL'],
+    technologies: [
+      'React',
+      'TypeScript',
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+    ],
   },
 ] satisfies IProject[]

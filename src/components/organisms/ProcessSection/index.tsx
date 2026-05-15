@@ -3,7 +3,7 @@
 import * as S from './styles'
 
 import { SectionHeader } from '@/components/molecules'
-import { ProcessTimeline } from '@/components/organisms'
+import ProcessTimeline from '@/components/organisms/ProcessTimeline'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
 
 // ================== COMPONENT

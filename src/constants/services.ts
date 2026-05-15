@@ -6,22 +6,22 @@ export interface IService {
 export const services = [
   {
     id: 'web-mobile',
-    icon: '/services/service-web-mobile.png',
+    icon: '/optimized/services/service-web-mobile.png',
   },
   {
     id: 'custom-systems',
-    icon: '/services/service-custom-systems.png',
+    icon: '/optimized/services/service-custom-systems.png',
   },
   {
     id: 'automations',
-    icon: '/services/service-automations.png',
+    icon: '/optimized/services/service-automations.png',
   },
   {
     id: 'api',
-    icon: '/services/service-api.png',
+    icon: '/optimized/services/service-api.png',
   },
   {
     id: 'consultancy',
-    icon: '/services/service-consultancy.png',
+    icon: '/optimized/services/service-consultancy.png',
   },
 ] satisfies IService[]

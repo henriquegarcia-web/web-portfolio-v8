@@ -2,7 +2,7 @@
 
 import * as S from './styles'
 
-import { Typography } from '@/components/atoms'
+import Typography from '@/components/atoms/Typography'
 
 // ================== COMPONENT TYPES
 

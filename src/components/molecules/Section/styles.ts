@@ -9,7 +9,12 @@ interface ISectionBackground {
   $background?: string
 }
 
-export const Section = styled.div`
+interface ISection {
+  $isContentMounted: boolean
+  $isEager: boolean
+}
+
+export const Section = styled.div<ISection>`
   position: relative;
 
   display: flex;
@@ -18,6 +23,8 @@ export const Section = styled.div`
   padding-inline: ${({ theme }) => theme.spacing[4]};
 
   width: 100%;
+  min-height: ${({ $isContentMounted, $isEager }) =>
+    !$isContentMounted && !$isEager ? '36rem' : 'auto'};
   overflow: hidden;
 
   &:not(:last-child) {
@@ -34,6 +41,9 @@ export const SectionWrapper = styled.div`
 
   width: 100%;
   max-width: ${({ theme }) => theme.sizes.container.lg};
+
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 42rem;
 `
 
 export const SectionBackground = styled.div<ISectionBackground>`

@@ -2,7 +2,7 @@
 
 import * as S from './styles'
 
-import { HeroDescription } from '@/components/molecules'
+import HeroDescription from '@/components/molecules/HeroDescription'
 
 // ================== COMPONENT
 

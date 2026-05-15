@@ -3,7 +3,7 @@
 import * as S from './styles'
 
 import { SectionHeader } from '@/components/molecules'
-import { TestimonialsGrid } from '@/components/organisms'
+import TestimonialsGrid from '@/components/organisms/TestimonialsGrid'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
 
 // ================== COMPONENT

@@ -1,22 +1,31 @@
-import {
-  HeroSection,
-  AboutSection,
-  ServicesSection,
-  ProjectsSection,
-  TestimonialsSection,
-  ProcessSection,
-  CtaSection,
-} from '@/components/organisms'
+import { lazy } from 'react'
+import type { ComponentType, LazyExoticComponent } from 'react'
 
-import type { ComponentType } from 'react'
+import HeroSection from '@/components/organisms/HeroSection'
+
+const AboutSection = lazy(() => import('@/components/organisms/AboutSection'))
+const ServicesSection = lazy(
+  () => import('@/components/organisms/ServicesSection'),
+)
+const ProjectsSection = lazy(
+  () => import('@/components/organisms/ProjectsSection'),
+)
+const TestimonialsSection = lazy(
+  () => import('@/components/organisms/TestimonialsSection'),
+)
+const ProcessSection = lazy(
+  () => import('@/components/organisms/ProcessSection'),
+)
+const CtaSection = lazy(() => import('@/components/organisms/CtaSection'))
 
 export interface ILandingSection {
   id: string
-  Component: ComponentType
+  Component: ComponentType | LazyExoticComponent<ComponentType>
   background: {
     type: 'color' | 'image' | 'video'
     value: string
   }
+  eager?: boolean
   showInNavigation: boolean
 }
 
@@ -28,6 +37,7 @@ export const landingSections: ILandingSection[] = [
       type: 'video',
       value: '/hero_bg.mp4',
     },
+    eager: true,
     showInNavigation: true,
   },
   {
