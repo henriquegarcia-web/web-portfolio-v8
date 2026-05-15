@@ -5,50 +5,50 @@
       "label": "Desenvolvedor • Solucionador • Inovador",
       "headline": "Transformo ideias em soluções digitais que geram impacto real.",
       "headlineFocus": "impacto real",
-      "legend": "Programador apaixonado por criar experiências, automatizar processos e desenvolver sistemas que impulsionam negócios.",
+      "legend": "Crio soluções digitais que resolvem problemas reais e geram valor, da concepção à entrega final: interfaces, backends, integrações, automações e produtos completos.",
       "ctaProjects": "Ver projetos",
       "ctaContact": "Vamos conversar"
     },
     "sobre": {
       "nav": "Sobre",
-      "label": "Sobre Mim",
-      "headline": "Mais que código. \n Eu crio soluções.",
-      "headlineFocus": "soluções",
-      "about": "Acredito que tecnologia de verdade não é só sobre código limpo, mas sobre entender problemas profundos e entregar soluções simples, escaláveis e que realmente fazem a diferença."
+      "label": "Sobre mim",
+      "headline": "Mais de 5 anos criando software que sai do plano e chega ao usuário.",
+      "headlineFocus": "chega ao usuário",
+      "about": "Sou Henrique Garcia, desenvolvedor full-stack com foco em front-end, performance e experiência do usuário. Atuo desde 2018 criando e evoluindo e-commerces, sistemas de gestão, SaaS, dashboards, aplicativos e produtos digitais. Gosto de entender o problema em profundidade, organizar o caminho técnico e entregar interfaces claras conectadas a arquiteturas sólidas."
     },
     "servicos": {
       "nav": "Serviços",
       "label": "O que eu faço",
-      "headline": "Soluções que desenvolvo"
+      "headline": "Soluções digitais para operação, venda e crescimento"
     },
     "projetos": {
       "nav": "Projetos",
-      "label": "Projetos em destaque",
-      "headline": "Alguns resultados que entreguei",
+      "label": "Portfólio selecionado",
+      "headline": "Produtos, sistemas e experiências que já coloquei de pé",
       "cta": "Ver todos os projetos"
     },
     "feedback": {
       "nav": "Feedbacks",
       "label": "Feedbacks",
-      "headline": "O que dizem sobre o meu trabalho"
+      "headline": "Parcerias construídas com clareza, entrega e responsabilidade"
     },
     "processos": {
-      "nav": "Processos",
+      "nav": "Processo",
       "label": "Meu processo",
-      "headline": "Como eu trabalho"
+      "headline": "Como transformo uma ideia em produto funcional"
     },
     "cta": {
       "nav": "Contato",
-      "headline": "Vamos construir algo incrível juntos?",
-      "legend": "Tem um desafio, ideia ou um projeto? Estou pronto para transformar em solução.",
+      "headline": "Vamos construir uma solução que faça sentido para o seu negócio?",
+      "legend": "Se você precisa validar uma ideia, modernizar uma interface, automatizar processos ou criar um sistema completo, posso ajudar a tirar o projeto do papel com direção técnica e foco em resultado.",
       "ctaContact": "Vamos conversar"
     },
     "footer": {
-      "headline": "Desenvolvo soluções digitais que automatizão e impulsionam negócios.",
+      "headline": "Desenvolvo sistemas, interfaces e produtos digitais com foco em performance, usabilidade e resultado de negócio.",
       "navigationTitle": "Navegação",
       "technologiesTitle": "Tecnologias",
       "contactTitle": "Vamos conversar",
-      "availability": "Disponível para proposta, freelance e parcerias.",
+      "availability": "Disponível para propostas, freelas, parcerias e projetos sob demanda.",
       "rights": "2026 - Todos os direitos reservados",
       "madeBy": "Feito com paixão por código."
     }
@@ -60,7 +60,7 @@
       "nextjs2": "Next.js",
       "typescript": "TypeScript",
       "nodejs": "Node.js",
-      "docker": "Dcoker"
+      "docker": "Docker"
     },
     "indicators": {
       "experience": "Anos de Experiência",
@@ -70,35 +70,76 @@
     "services": {
       "web-mobile": {
         "title": "Web & Mobile",
-        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+        "legend": "Interfaces responsivas, aplicações React, Next.js e experiências mobile pensadas para performance, clareza e uso real no dia a dia."
       },
       "custom-systems": {
-        "title": "Sistemas Sob Demanda",
-        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+        "title": "Sistemas sob demanda",
+        "legend": "Dashboards, CRMs, plataformas administrativas, SaaS e sistemas multiusuário com fluxos bem definidos e arquitetura preparada para crescer."
       },
       "automations": {
         "title": "Automações com IA",
-        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+        "legend": "Automatização de tarefas repetitivas, integração entre ferramentas e fluxos inteligentes para reduzir trabalho manual e acelerar operações."
       },
       "api": {
-        "title": "API & Backends",
-        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+        "title": "APIs & Backends",
+        "legend": "Backends em Node.js, integrações REST, autenticação, bancos de dados, webhooks e serviços conectados ao que a aplicação precisa entregar."
       },
       "consultancy": {
-        "title": "Consultoria Tecnológica",
-        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+        "title": "Consultoria tecnológica",
+        "legend": "Apoio técnico para escolher stack, revisar arquitetura, planejar MVPs, melhorar performance e organizar próximos passos de produto."
+      }
+    },
+    "feedbacks": {
+      "feedback1": {
+        "role": "Cliente de Sistema",
+        "message": "Henrique conseguiu transformar uma ideia solta em um sistema claro, organizado e pronto para uso. A comunicação foi objetiva e cada entrega vinha com explicação do que havia evoluído."
+      },
+      "feedback2": {
+        "role": "Empreendedor Digital",
+        "message": "O projeto precisava de velocidade sem perder qualidade. A entrega trouxe uma interface profissional, boa performance e uma base técnica fácil de continuar evoluindo."
+      },
+      "feedback3": {
+        "role": "Cliente de Plataforma",
+        "message": "Além de desenvolver, ele ajudou a pensar o fluxo do produto. Isso fez diferença para simplificar telas, reduzir dúvidas dos usuários e deixar a solução mais redonda."
+      }
+    },
+    "processes": {
+      "step1": {
+        "title": "Entender",
+        "description": "Escuto o contexto, mapeio objetivos, usuários e restrições para separar o que é prioridade do que pode esperar."
+      },
+      "step2": {
+        "title": "Planejar",
+        "description": "Organizo escopo, telas, integrações, dados e riscos técnicos para criar um caminho de execução claro antes de codar."
+      },
+      "step3": {
+        "title": "Desenvolver",
+        "description": "Construo a solução com componentes reutilizáveis, código limpo, integração com APIs e atenção à experiência em cada tela."
+      },
+      "step4": {
+        "title": "Entregar",
+        "description": "Valido fluxos, ajusto responsividade, reviso detalhes de interface e preparo a aplicação para publicação ou homologação."
+      },
+      "step5": {
+        "title": "Evoluir",
+        "description": "Acompanho melhorias, analiso feedbacks e transformo novas necessidades em ajustes contínuos no produto."
       }
     },
     "projects": {
       "uniw": {
         "title": "E-commerce Multiplataforma",
         "description": "Plataforma de e-commerce multi-tenant que conecta vendedores, clientes e fornecedores, com controle total para o administrador.",
-        "tag": "Sistema"
+        "tag": "E-commerce"
       },
       "mandato-digital": {
         "title": "Sistema de Gestão Política",
         "description": "Plataforma para gestão política que otimiza o controle de eleitores, comunicação e atividades de campanha.",
         "tag": "Sistema"
+      },
+      "landing-page-ebook": {
+        "title": "Landing Page E-book",
+        "description": "Landing page otimizada para alta conversão, com o objetivo de promover e capturar leads através do download de um e-book.",
+        "tag": "Landing Page"
       },
       "hungry-hub": {
         "title": "Sistema de Cardápio Online",
@@ -108,43 +149,7 @@
       "quick-shop": {
         "title": "E-commerce de Camisetas",
         "description": "E-commerce moderno e dinâmico focado na venda de camisetas, com design clean e processo de compra otimizado.",
-        "tag": "E-Commerce"
-      }
-    },
-    "feedbacks": {
-      "feedback1": {
-        "role": "CEO",
-        "message": "Labore voluptate quo repudiandae iusto animi repellat quod nemo sit hic dolores natus velit."
-      },
-      "feedback2": {
-        "role": "Empreendedor",
-        "message": "Labore voluptate quo repudiandae iusto animi repellat quod nemo sit hic dolores natus velit."
-      },
-      "feedback3": {
-        "role": "Empreendedora",
-        "message": "Labore voluptate quo repudiandae iusto animi repellat quod nemo sit hic dolores natus velit."
-      }
-    },
-    "processes": {
-      "step1": {
-        "title": "Entender",
-        "description": "Escuto, pergunto e mergulho no problema para entender o que realmente importa."
-      },
-      "step2": {
-        "title": "Planejar",
-        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
-      },
-      "step3": {
-        "title": "Desenvolver",
-        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
-      },
-      "step4": {
-        "title": "Entregar",
-        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
-      },
-      "step5": {
-        "title": "Evoluir",
-        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
+        "tag": "E-commerce"
       }
     }
   }

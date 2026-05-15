@@ -8,6 +8,7 @@ import * as S from './styles'
 import { Button, Typography } from '@/components/atoms'
 import { landingSections } from '@/constants/landingSections'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
+import { LanguageSelector } from '@/components/molecules'
 
 // ================== COMPONENT
 
@@ -84,6 +85,7 @@ const MobileMenu = () => {
   return (
     <S.MobileMenu aria-label="Mobile menu">
       <S.ToggleWrapper>
+        <LanguageSelector />
         <Button
           ref={toggleButtonRef}
           variant="secondary"

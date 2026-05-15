@@ -8,6 +8,7 @@ export type SocialIdTypes =
   | 'instagram'
   | 'email'
   | 'behance'
+  | 'whatsapp'
 
 export type SizeTypes = 'sm' | 'md' | 'lg'
 export type PostionTypes = 'left' | 'right' | 'only'

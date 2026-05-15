@@ -1,5 +1,5 @@
 import type { SocialIdTypes } from '@/types/styles'
-import { SITE_CONFIG } from './site'
+import { SITE_CONFIG, WHATSAPP_HREF } from './site'
 
 export interface ISocialLink {
   id: SocialIdTypes
@@ -32,5 +32,10 @@ export const SOCIAL_LINKS = [
     id: 'behance',
     name: 'Behance',
     link: SITE_CONFIG.socialLinks.behance,
+  },
+  {
+    id: 'whatsapp',
+    name: 'WhatsApp',
+    link: WHATSAPP_HREF,
   },
 ] satisfies ISocialLink[]

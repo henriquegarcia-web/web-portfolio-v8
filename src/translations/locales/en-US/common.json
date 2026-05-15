@@ -2,55 +2,55 @@
   "sections": {
     "inicio": {
       "nav": "Home",
-      "label": "Developer • Solver • Innovator",
-      "headline": "I turn ideas into digital solutions that create real impact.",
-      "headlineFocus": "real impact",
-      "legend": "A programmer passionate about creating experiences, automating processes, and building systems that move businesses forward.",
+      "label": "Full-Stack Developer • Front-End • Digital Products",
+      "headline": "I turn business challenges into high-performance systems, apps, and digital experiences.",
+      "headlineFocus": "high-performance",
+      "legend": "I build digital solutions that solve real problems and create value from concept to delivery: interfaces, backends, integrations, automations, and complete products.",
       "ctaProjects": "View projects",
       "ctaContact": "Let's talk"
     },
     "sobre": {
       "nav": "About",
-      "label": "About Me",
-      "headline": "More than code. \n I create solutions.",
-      "headlineFocus": "solutions",
-      "about": "I believe real technology is not only about clean code, but about understanding deep problems and delivering simple, scalable solutions that truly make a difference."
+      "label": "About me",
+      "headline": "Over 5 years building software that moves from plan to real users.",
+      "headlineFocus": "real users",
+      "about": "I am Henrique Garcia, a full-stack developer focused on front-end, performance, and user experience. Since 2018, I have been building and improving e-commerce platforms, management systems, SaaS products, dashboards, apps, and digital products. I like to understand the problem deeply, organize the technical path, and deliver clear interfaces connected to solid architecture."
     },
     "servicos": {
       "nav": "Services",
       "label": "What I do",
-      "headline": "Solutions I build"
+      "headline": "Digital solutions for operations, sales, and growth"
     },
     "projetos": {
       "nav": "Projects",
-      "label": "Featured projects",
-      "headline": "Some results I have delivered",
+      "label": "Selected portfolio",
+      "headline": "Products, systems, and experiences I have brought to life",
       "cta": "View all projects"
     },
     "feedback": {
       "nav": "Feedback",
       "label": "Feedback",
-      "headline": "What people say about my work"
+      "headline": "Partnerships built with clarity, delivery, and responsibility"
     },
     "processos": {
       "nav": "Process",
       "label": "My process",
-      "headline": "How I work"
+      "headline": "How I turn an idea into a functional product"
     },
     "cta": {
       "nav": "Contact",
-      "headline": "Let's build something amazing together?",
-      "legend": "Have a challenge, idea, or project? I am ready to turn it into a solution.",
+      "headline": "Shall we build a solution that makes sense for your business?",
+      "legend": "If you need to validate an idea, modernize an interface, automate processes, or create a complete system, I can help move the project forward with technical direction and a focus on results.",
       "ctaContact": "Let's talk"
     },
     "footer": {
-      "headline": "I build digital solutions that automate and accelerate businesses.",
+      "headline": "I develop systems, interfaces, and digital products focused on performance, usability, and business results.",
       "navigationTitle": "Navigation",
       "technologiesTitle": "Technologies",
       "contactTitle": "Let's talk",
-      "availability": "Available for proposals, freelance work, and partnerships.",
+      "availability": "Available for proposals, freelance work, partnerships, and custom projects.",
       "rights": "2026 - All rights reserved",
-      "madeBy": "Made with passion for code."
+      "madeBy": "Made with care, coffee, and love for code."
     }
   },
   "components": {
@@ -65,86 +65,141 @@
     "indicators": {
       "experience": "Years of Experience",
       "projects": "Delivered Projects",
-      "results": "Focus on Results"
+      "results": "Results Focus"
     },
     "services": {
       "web-mobile": {
         "title": "Web & Mobile",
-        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+        "legend": "Responsive interfaces, React and Next.js applications, and mobile experiences designed for performance, clarity, and real daily use."
       },
       "custom-systems": {
         "title": "Custom Systems",
-        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+        "legend": "Dashboards, CRMs, admin platforms, SaaS products, and multi-user systems with well-defined flows and architecture ready to scale."
       },
       "automations": {
         "title": "AI Automations",
-        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+        "legend": "Automation for repetitive tasks, tool integrations, and smart workflows that reduce manual work and speed up operations."
       },
       "api": {
-        "title": "API & Backends",
-        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+        "title": "APIs & Backends",
+        "legend": "Node.js backends, REST integrations, authentication, databases, webhooks, and services connected to what the application needs to deliver."
       },
       "consultancy": {
         "title": "Technology Consulting",
-        "legend": "Lorem ipsum dolor sit amet consectetur adipisicing elit a veritatis."
+        "legend": "Technical support to choose a stack, review architecture, plan MVPs, improve performance, and organize product next steps."
+      }
+    },
+    "feedbacks": {
+      "feedback1": {
+        "role": "Custom system client",
+        "message": "Henrique turned a loose idea into a clear, organized system ready for use. Communication was direct, and every delivery came with context about what had evolved."
+      },
+      "feedback2": {
+        "role": "Digital entrepreneur",
+        "message": "The project needed speed without losing quality. The delivery brought a professional interface, strong performance, and a technical base that is easy to keep evolving."
+      },
+      "feedback3": {
+        "role": "Web platform client",
+        "message": "Beyond development, he helped think through the product flow. That made a difference in simplifying screens, reducing user doubts, and making the solution feel more complete."
+      }
+    },
+    "processes": {
+      "step1": {
+        "title": "Understand",
+        "description": "I listen to the context and map goals, users, and constraints to separate what matters now from what can wait."
+      },
+      "step2": {
+        "title": "Plan",
+        "description": "I organize scope, screens, integrations, data, and technical risks to create a clear execution path before writing code."
+      },
+      "step3": {
+        "title": "Build",
+        "description": "I build the solution with reusable components, clean code, API integration, and attention to the experience in every screen."
+      },
+      "step4": {
+        "title": "Deliver",
+        "description": "I validate flows, adjust responsiveness, review interface details, and prepare the application for release or review."
+      },
+      "step5": {
+        "title": "Evolve",
+        "description": "I follow improvements, analyze feedback, and turn new needs into continuous product refinements."
       }
     },
     "projects": {
       "uniw": {
         "title": "Multiplatform E-commerce",
-        "description": "A multi-tenant e-commerce platform that connects sellers, customers, and suppliers, with full control for the administrator.",
-        "tag": "System"
+        "description": "A multi-tenant e-commerce platform that connects sellers, customers, and suppliers, with full administrator control.",
+        "tag": "E-commerce"
       },
       "mandato-digital": {
         "title": "Political Management System",
         "description": "A political management platform that optimizes voter control, communication, and campaign activities.",
         "tag": "System"
       },
+      "landing-page-ebook": {
+        "title": "E-book Landing Page",
+        "description": "A high-conversion landing page built to promote an e-book and capture leads through a focused download flow.",
+        "tag": "Landing Page"
+      },
       "hungry-hub": {
         "title": "Online Menu System",
-        "description": "An online platform for restaurant menu management, enabling real-time updates and online orders.",
+        "description": "An online platform for restaurant menu management, enabling real-time updates and online ordering.",
         "tag": "Delivery"
       },
       "quick-shop": {
         "title": "T-shirt E-commerce",
         "description": "A modern and dynamic e-commerce experience focused on selling T-shirts, with a clean design and optimized checkout flow.",
         "tag": "E-commerce"
-      }
-    },
-    "feedbacks": {
-      "feedback1": {
-        "role": "CEO",
-        "message": "Labore voluptate quo repudiandae iusto animi repellat quod nemo sit hic dolores natus velit."
       },
-      "feedback2": {
-        "role": "Entrepreneur",
-        "message": "Labore voluptate quo repudiandae iusto animi repellat quod nemo sit hic dolores natus velit."
+      "agencia-bmw": {
+        "title": "BMW Institutional Website",
+        "description": "An institutional website for Agencia BMW, with a sophisticated design focused on user experience, services, and portfolio presentation.",
+        "tag": "Institutional"
       },
-      "feedback3": {
-        "role": "Entrepreneur",
-        "message": "Labore voluptate quo repudiandae iusto animi repellat quod nemo sit hic dolores natus velit."
-      }
-    },
-    "processes": {
-      "step1": {
-        "title": "Understand",
-        "description": "I listen, ask questions, and dig into the problem to understand what truly matters."
+      "aplicativo-uniw": {
+        "title": "E-commerce App",
+        "description": "A mobile app that expands the UNIWI e-commerce platform with complete features for customers and sellers on the go.",
+        "tag": "Mobile"
       },
-      "step2": {
-        "title": "Plan",
-        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
+      "portfolio-pessoal": {
+        "title": "Personal Portfolio",
+        "description": "An online portfolio for showcasing projects and skills, working as an interactive and professional digital business card.",
+        "tag": "Portfolio"
       },
-      "step3": {
-        "title": "Build",
-        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
+      "rifas": {
+        "title": "Online Raffle System",
+        "description": "An online raffle platform for creating, managing, and joining prize draws in a secure and transparent way.",
+        "tag": "System"
       },
-      "step4": {
-        "title": "Deliver",
-        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
+      "website-bmw": {
+        "title": "BMW Website",
+        "description": "A premium BMW website focused on a high-quality user experience, presenting the brand history and vehicle lineup.",
+        "tag": "Institutional"
       },
-      "step5": {
-        "title": "Evolve",
-        "description": "Esse blanditiis culpa, autem animi, minima in doloribus aspernatur dolore."
+      "agencia-marketing": {
+        "title": "Agency Website",
+        "description": "A modern and dynamic institutional website for a marketing agency, focused on services and successful portfolio work.",
+        "tag": "Institutional"
+      },
+      "site-fit": {
+        "title": "Fitness Website",
+        "description": "A fitness website with class scheduling, plans, and wellness content for health-focused audiences.",
+        "tag": "Website"
+      },
+      "sistema-delivery": {
+        "title": "Delivery System",
+        "description": "A complete delivery management platform with restaurant dashboards and customer-facing flows for orders and deliveries.",
+        "tag": "Delivery"
+      },
+      "sistema-tickets": {
+        "title": "Ticket System",
+        "description": "A support ticket management platform that organizes and assigns requests, keeping team workflows efficient.",
+        "tag": "System"
+      },
+      "sistema-atendimento": {
+        "title": "CRM for Freelancers",
+        "description": "A customer support system that organizes and centralizes client interactions, improving communication and problem resolution.",
+        "tag": "CRM"
       }
     }
   }

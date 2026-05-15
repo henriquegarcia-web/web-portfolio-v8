@@ -8,6 +8,7 @@ import {
   FaBehance,
   FaInstagram,
   FaRegEnvelopeOpen,
+  FaWhatsapp,
 } from 'react-icons/fa'
 
 import { SOCIAL_LINKS } from '@/constants/social'
@@ -23,6 +24,7 @@ const iconMap: Record<ISocialLink['icon'], IconType> = {
   instagram: FaInstagram,
   email: FaRegEnvelopeOpen,
   behance: FaBehance,
+  whatsapp: FaWhatsapp,
 }
 
 const sizeMap: Record<NonNullable<ISocialLink['size']>, number> = {

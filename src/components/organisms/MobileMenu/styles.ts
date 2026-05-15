@@ -10,6 +10,7 @@ export const MobileMenu = styled.nav`
 
 export const ToggleWrapper = styled.div`
   display: flex;
+  gap: ${({ theme }) => theme.spacing[2]};
 `
 
 export const Overlay = styled.button`
