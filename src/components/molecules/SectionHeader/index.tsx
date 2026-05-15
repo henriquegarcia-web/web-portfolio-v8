@@ -14,6 +14,8 @@ interface ISectionHeader {
   cta?: {
     label: string
     path: string
+    target?: string
+    rel?: string
   }
 }
 
@@ -34,6 +36,8 @@ const SectionHeader = ({ label, headline, highlight, cta }: ISectionHeader) => {
             iconPosition="right"
             variant="secondary"
             href={cta.path}
+            target={cta.target}
+            rel={cta.rel}
           >
             {cta.label}
           </Button>

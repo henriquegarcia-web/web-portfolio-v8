@@ -6,7 +6,7 @@ import { RiArrowRightUpLine } from 'react-icons/ri'
 import { Button, Logo, Typography } from '@/components/atoms'
 import { FooterList, SocialLinksRow } from '@/components/molecules'
 import { landingSections } from '@/constants/landingSections'
-import { CONTACT_HREF } from '@/constants/site'
+import { WHATSAPP_HREF } from '@/constants/site'
 import { techStack } from '@/constants/stack'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
 
@@ -67,7 +67,9 @@ const Footer = () => {
               icon={<RiArrowRightUpLine />}
               iconPosition="right"
               variant="secondary"
-              href={CONTACT_HREF}
+              href={WHATSAPP_HREF}
+              target="_blank"
+              rel="noreferrer"
             >
               {t('sections.cta.ctaContact')}
             </Button>

@@ -24,17 +24,13 @@ const ProcessStepCard = ({
   const { t } = useAppTranslation()
   const ProcessIcon = process.icon
 
-  const processGradient = `linear-gradient(90deg, ${process.color}, ${
-    nextColor ?? 'transparent'
-  })`
-
   return (
     <S.ProcessStepCard>
       <S.ProcessStepIconWrapper>
         <S.ProcessStepIcon $color={process.color}>
           <ProcessIcon aria-hidden />
         </S.ProcessStepIcon>
-        <S.ProcessStepBar $color={process.color} $gradient={processGradient} />
+        <S.ProcessStepBar $color={process.color} $nextColor={nextColor} />
       </S.ProcessStepIconWrapper>
       <S.ProcessStepDetails>
         <StepNumber step={position} decimal={2} />

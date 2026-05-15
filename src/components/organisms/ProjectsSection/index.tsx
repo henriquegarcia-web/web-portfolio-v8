@@ -4,6 +4,7 @@ import * as S from './styles'
 
 import { SectionHeader } from '@/components/molecules'
 import { ProjectsCarousel } from '@/components/organisms'
+import { PROJECTS_HREF } from '@/constants/site'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
 
 // ================== COMPONENT
@@ -19,7 +20,9 @@ const ProjectsSection = () => {
           headline={t('sections.projetos.headline')}
           cta={{
             label: t('sections.projetos.cta'),
-            path: '#projetos',
+            path: PROJECTS_HREF,
+            target: '_blank',
+            rel: 'noreferrer',
           }}
         />
       </S.ProjectsSectionLeft>

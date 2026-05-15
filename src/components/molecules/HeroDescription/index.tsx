@@ -4,7 +4,7 @@ import * as S from './styles'
 import { RiArrowRightUpLine } from 'react-icons/ri'
 
 import { Button, Typography } from '@/components/atoms'
-import { CONTACT_HREF } from '@/constants/site'
+import { PROJECTS_HREF, WHATSAPP_HREF } from '@/constants/site'
 import { useAppTranslation } from '@/hooks/useAppTranslation'
 
 // ================== COMPONENT
@@ -34,7 +34,9 @@ const HeroDescription = () => {
           icon={<RiArrowRightUpLine />}
           iconPosition="right"
           variant="primary"
-          href="#projetos"
+          href={PROJECTS_HREF}
+          target="_blank"
+          rel="noreferrer"
         >
           {t('sections.inicio.ctaProjects')}
         </Button>
@@ -42,7 +44,9 @@ const HeroDescription = () => {
           icon={<RiArrowRightUpLine />}
           iconPosition="right"
           variant="secondary"
-          href={CONTACT_HREF}
+          href={WHATSAPP_HREF}
+          target="_blank"
+          rel="noreferrer"
         >
           {t('sections.inicio.ctaContact')}
         </Button>

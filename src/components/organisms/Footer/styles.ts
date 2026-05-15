@@ -13,6 +13,7 @@ export const FooterWrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   max-width: ${({ theme }) => theme.sizes.container.lg};
+  gap: ${({ theme }) => theme.spacing[6]};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-wrap: wrap;

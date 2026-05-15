@@ -6,7 +6,7 @@ interface IProcessColor {
 
 interface IProcessGradient {
   $color: string
-  $gradient: string
+  $nextColor?: string
 }
 
 export const ProcessStepCard = styled.article`
@@ -28,6 +28,7 @@ export const ProcessStepIconWrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     align-items: flex-start;
     min-height: 100%;
+    padding-bottom: ${({ theme }) => theme.spacing[4]};
   }
 `
 
@@ -57,16 +58,19 @@ export const ProcessStepBar = styled.div<IProcessGradient>`
   width: calc(100% - 50px);
   height: 3px;
 
-  background-image: ${({ $gradient }) => $gradient};
-  /* box-shadow: 0 0 5px 0 ${({ $color }) => $color}; */
+  background-image: ${({ $color, $nextColor }) =>
+    `linear-gradient(90deg, ${$color}, ${$nextColor ?? 'transparent'})`};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     top: 50px;
     right: auto;
     left: 50%;
     width: 3px;
-    height: calc(100% + ${({ theme }) => theme.spacing[6]});
+    height: calc(100% - ${({ theme }) => theme.spacing[6]});
     transform: translateX(-50%);
+
+    background-image: ${({ $color, $nextColor }) =>
+      `linear-gradient(180deg, ${$color}, ${$nextColor ?? 'transparent'})`};
   }
 `
 
